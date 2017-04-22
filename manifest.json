@@ -15,21 +15,25 @@
     },
     "commands": {
         "MediaPlayPause": {
+            "description": "toggles play state of the last active media website",
             "suggested_key": {
                 "default": "MediaPlayPause"
             }
         },
         "MediaNextTrack": {
+            "description": "plays the next track for the last active media website",
             "suggested_key": {
                 "default": "MediaNextTrack"
             }
         },
         "MediaPrevTrack": {
+            "description": "plays the previous track for the last active media website",
             "suggested_key": {
                 "default": "MediaPrevTrack"
             }
         },
         "MediaStop": {
+            "description": "stops playback of the last active media website",
             "suggested_key": {
                 "default": "MediaStop"
             }

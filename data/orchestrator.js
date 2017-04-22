@@ -85,6 +85,8 @@ MediaKeys.Init = function () {
 		if (Notification.permission == 'granted') setupTrackInfoUpdates();
 		else Notification.requestPermission().then(function (result) { if (result == 'granted') setupTrackInfoUpdates(); });
 	}
+
+	browser = chrome || browser
 	browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
 		switch (request) {
 			case "MediaPlayPause":
