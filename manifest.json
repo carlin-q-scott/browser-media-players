@@ -1,0 +1,312 @@
+{
+    "manifest_version": 2,
+    "name": "browser-media-players",
+    "version": "1.0.0",
+    "author": "Carlin Scott",
+    "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
+    "description": "Lets you control many popular website media players using media key events",
+    "icons": {
+        "64": "icon.png"
+    },
+    "background": {
+        "scripts": [
+            "lib/webExtensionHotkeys.js"
+        ]
+    },
+    "commands": {
+        "MediaPlayPause": {
+            "suggested_key": {
+                "default": "MediaPlayPause"
+            }
+        },
+        "MediaNextTrack": {
+            "suggested_key": {
+                "default": "MediaNextTrack"
+            }
+        },
+        "MediaPrevTrack": {
+            "suggested_key": {
+                "default": "MediaPrevTrack"
+            }
+        },
+        "MediaStop": {
+            "suggested_key": {
+                "default": "MediaStop"
+            }
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "data/youtube.com-orchestrator.js"
+            ],
+            "all_frames": true
+        },
+        {
+            "js": [
+                "data/pandora.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.pandora.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/tidal.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.tidal.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/bandcamp.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.bandcamp.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/play.google.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.play.google.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/play.spotify.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.play.spotify.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/player.spotify.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.player.spotify.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/open.spotify.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.open.spotify.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/soundcloud.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.soundcloud.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/music.yandex.ru-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.music.yandex.ru/*"
+            ]
+        },
+        {
+            "js": [
+                "data/vk.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.vk.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/radio.yandex.ru-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.radio.yandex.ru/*"
+            ]
+        },
+        {
+            "js": [
+                "data/deezer.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.deezer.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/overcast.fm-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.overcast.fm/*"
+            ]
+        },
+        {
+            "js": [
+                "data/plex.tv-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.plex.tv/*",
+                "http://127.0.0.1:32400/*"
+            ]
+        },
+        {
+            "js": [
+                "data/pluralsight.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.app.pluralsight.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/jamstash-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.jamstash.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/koel-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.koel.phanan.net/*"
+            ]
+        },
+        {
+            "js": [
+                "data/subsonic-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.demo.subsonic.org/*"
+            ]
+        },
+        {
+            "js": [
+                "data/madsonic-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.demo.madsonic.org/*"
+            ]
+        },
+        {
+            "js": [
+                "data/music.amazon-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.music.amazon.com/*",
+                "*://*.music.amazon.de/*",
+                "*://*.music.amazon.co.uk/*"
+            ]
+        },
+        {
+            "js": [
+                "data/cbcmusic.ca-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.cbcmusic.ca/*"
+            ]
+        },
+        {
+            "js": [
+                "data/mixcloud.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.mixcloud.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/hypem.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.hypem.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/netflix.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.netflix.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/tunein.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.tunein.com/*"
+            ]
+        },
+        {
+            "js": [
+                "data/di.fm-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.di.fm/*"
+            ]
+        }
+    ]
+}

@@ -1,9 +1,0 @@
-Thumbs.db
-tests/*
-*.yml
-.*
-node_modules/*
-*.xpi
-jsconfig.json
-firefox/*
-firefox*.tar.bz2

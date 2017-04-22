@@ -1,8 +1,11 @@
 {
     "env": {
-        "browser": false,
+        "browser": true,
         "commonjs": true,
         "es6": true
+    },
+    "globals": {
+        "browser": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -20,13 +23,10 @@
         ],
         "quotes": [
             "warn",
-            "double"
+            "single"
         ],
-        "semi": [
-            "warn",
-            "always"
-        ],
-        "no-console": [0],
+        "semi": [0],
+        "no-console": [1],
         "func-style": [
             "warn",
             "declaration",
