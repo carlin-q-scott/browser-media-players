@@ -8,4 +8,5 @@ MediaKeys.pauseButton = "//*[@data-qa='pause_button' or @class='pauseButton' and
 MediaKeys.previousButton = "//*[@data-qa='replay_button' or @class='skipButton']";
 MediaKeys.skipButton = "//*[@data-qa='skip_button' or @class='skipButton']";
 MediaKeys.trackInfoContainer = "//*[contains(@data-reactid,'NowPlaying') or @id='trackInfoContainer']";
-MediaKeys.trackInfo = "//*[class='nowPlayingTopInfo__current' or contains(@class,'trackData')]";
+MediaKeys.trackInfo = "//*[@class='nowPlayingTopInfo__current' or contains(@class,'trackData')]";
+MediaKeys.basePlayer = null;

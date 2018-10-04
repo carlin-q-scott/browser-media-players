@@ -1,42 +1,53 @@
 {
     "manifest_version": 2,
-    "name": "browser-media-players",
+    "name": "browser-media-keys",
     "version": "1.0.0",
     "author": "Carlin Scott",
-    "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
+    "homepage_url": "https://github.com/carlin-q-scott/browser-media-keys",
     "description": "Lets you control many popular website media players using media key events",
     "icons": {
         "64": "icon.png"
     },
+    "applications": {
+        "gecko": {
+            "id": "jid1-4GP7z3tkUd3Tzg@jetpack"
+        }
+    },
     "background": {
         "scripts": [
+            "lib/browser-polyfill.min.js",
             "lib/webExtensionHotkeys.js"
         ]
     },
+    "permissions": ["nativeMessaging"],
     "commands": {
         "MediaPlayPause": {
             "description": "toggles play state of the last active media website",
             "suggested_key": {
                 "default": "MediaPlayPause"
-            }
+            },
+            "global": true
         },
         "MediaNextTrack": {
             "description": "plays the next track for the last active media website",
             "suggested_key": {
                 "default": "MediaNextTrack"
-            }
+            },
+            "global": true
         },
         "MediaPrevTrack": {
             "description": "plays the previous track for the last active media website",
             "suggested_key": {
                 "default": "MediaPrevTrack"
-            }
+            },
+            "global": true
         },
         "MediaStop": {
             "description": "stops playback of the last active media website",
             "suggested_key": {
                 "default": "MediaStop"
-            }
+            },
+            "global": true
         }
     },
     "content_scripts": [
@@ -45,12 +56,14 @@
                 "*://*.youtube.com/*"
             ],
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/youtube.com-orchestrator.js"
             ],
             "all_frames": true
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/pandora.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -61,6 +74,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/tidal.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -71,6 +85,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/bandcamp.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -81,6 +96,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/play.google.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -91,6 +107,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/play.spotify.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -101,6 +118,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/player.spotify.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -111,6 +129,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/open.spotify.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -121,6 +140,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/soundcloud.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -131,6 +151,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/music.yandex.ru-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -141,6 +162,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/vk.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -151,6 +173,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/radio.yandex.ru-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -161,6 +184,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/deezer.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -171,6 +195,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/overcast.fm-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -181,6 +206,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/plex.tv-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -192,6 +218,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/pluralsight.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -202,6 +229,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/jamstash-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -212,6 +240,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/koel-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -222,6 +251,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/subsonic-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -232,6 +262,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/madsonic-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -242,6 +273,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/music.amazon-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -254,6 +286,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/cbcmusic.ca-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -264,6 +297,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/mixcloud.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -274,6 +308,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/hypem.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -284,6 +319,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/netflix.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -294,6 +330,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/tunein.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
@@ -304,6 +341,7 @@
         },
         {
             "js": [
+                "lib/browser-polyfill.min.js",
                 "data/di.fm-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"

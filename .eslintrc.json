@@ -5,8 +5,7 @@
         "es6": true
     },
     "globals": {
-        "browser": true,
-        "chrome": true
+        "browser": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

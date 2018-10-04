@@ -3,11 +3,11 @@ var hotkeyManager = require("./lib/hotkeyManager");
 var pageWorkerManager = require("./lib/pageWorkerManager");
 
 //attach content scripts to appropriate websites
-exports.main = function (options, callbacks) {
+exports.main = function () {
     pageWorkerManager.Init();
 };
 
-exports.onUnload = function (reason) {
+exports.onUnload = function () {
     hotkeyManager.UnregisterHotkeys();
     pageWorkerManager.Destroy();
 };
