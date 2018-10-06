@@ -88,7 +88,7 @@ MediaKeys.Init = function () {
 		let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
 		
 		port.onMessage.addListener(request => {
-			console.log(`page script received ${request}`);
+			//console.log(`page script received ${request}`);
 			switch (request) {
 				case "MediaPlayPause":
 					MediaPlayPause(port.postMessage);
