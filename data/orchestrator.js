@@ -1,5 +1,3 @@
-/*eslint-env browser */
-
 /**
  * MediaKeys namespace.
  * 
@@ -86,23 +84,25 @@ MediaKeys.Init = function () {
 		else Notification.requestPermission().then(function (result) { if (result == 'granted') setupTrackInfoUpdates(); });
 	}
 
-	browser = chrome || browser
-	browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+	let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
+		
+	port.onMessage.addListener(request => {
+		console.log(`page script received ${request}`);
 		switch (request) {
 			case "MediaPlayPause":
-				MediaPlayPause(sendResponse);
+				MediaPlayPause(port.postMessage);
 				break;
 
 			case "MediaNextTrack":
-				MediaNextTrack(sendResponse);
+				MediaNextTrack(port.postMessage);
 				break;
 
 			case "MediaPrevTrack":
-				MediaPrevTrack(sendResponse);
+				MediaPrevTrack(port.postMessage);
 				break;
 
 			case "MediaStop":
-				MediaStop(sendResponse);
+				MediaStop(port.postMessage);
 				break;
 
 			default:

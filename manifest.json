@@ -14,12 +14,9 @@
         }
     },
     "background": {
-        "scripts": [
-            "lib/browser-polyfill.min.js",
-            "lib/webExtensionHotkeys.js"
-        ]
+        "page": "index.html"
     },
-    "permissions": ["nativeMessaging"],
+    "permissions": ["storage"],
     "commands": {
         "MediaPlayPause": {
             "description": "toggles play state of the last active media website",

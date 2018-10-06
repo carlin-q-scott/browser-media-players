@@ -1,15 +1,14 @@
 {
     "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true
+        "browser": true
     },
     "globals": {
         "browser": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 8
     },
     "rules": {
         "indent": [

@@ -1,16 +1,12 @@
-var preferences = require("sdk/simple-prefs");
-var hotkeyManager = require("./lib/hotkeyManager");
-var pageWorkerManager = require("./lib/pageWorkerManager");
+import hotkeyManager from './lib/hotkeyManager.js';
+import pageWorkerManager from './lib/pageWorkerManager.js';
 
-//attach content scripts to appropriate websites
-exports.main = function () {
-    pageWorkerManager.Init();
-};
+pageWorkerManager.Init();
 
-exports.onUnload = function () {
+function unload() {
     hotkeyManager.UnregisterHotkeys();
     pageWorkerManager.Destroy();
-};
+}
 
 function onPrefChange() { //re-register content scripts
     hotkeyManager.UnregisterHotkeys();
@@ -18,4 +14,4 @@ function onPrefChange() { //re-register content scripts
     pageWorkerManager.Init();
 }
 
-preferences.on("", onPrefChange);
+// preferences.on("", onPrefChange);
