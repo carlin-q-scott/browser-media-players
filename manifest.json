@@ -347,5 +347,8 @@
                 "*://*.di.fm/*"
             ]
         }
+    ],
+    "web_accessible_resources": [
+        "data/youtube.com-orchestrator-pageScript.js"
     ]
 }

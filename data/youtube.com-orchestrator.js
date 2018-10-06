@@ -2,7 +2,7 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
 MediaKeys.Init = function()
 {
@@ -13,61 +13,72 @@ MediaKeys.Init = function()
         //console.log(`attempting to find youtube player. ${maxPlayerLoadTime} millis remaining...`)
         maxPlayerLoadTime -= checkForPlayerInteval;
         if (maxPlayerLoadTime == 0) {
-            console.log("didn't find youtube player");
+            console.log('didn\'t find youtube player');
             clearInterval(intervalId);
-            self.port.emit("self-destruct");
+            // self.port.emit('self-destruct');
             return;
         }
         if (!window.document.querySelector('div.html5-video-player')) return; //because there's no youtube player
         clearInterval(intervalId);
 
         var pageDomain = window.location.origin;
-        var pageScript = document.createElement("script");
+        var pageScript = document.createElement('script');
 
         var attachPageScript = function () {
-            pageScript.id = "media-keys";
-            pageScript.src = self.options.pageScriptFile;
+            pageScript.id = 'media-keys';
+            pageScript.src = browser.extension.getURL('data/youtube.com-orchestrator-pageScript.js');
             document.body.appendChild(pageScript);
         };
         attachPageScript();
+        
+        function setupCommunicationChannel(){
+            let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
+            
+            port.onMessage.addListener(message => {
+                console.log(`youtube orchestrator about to handle ${message}`);
+                switch (message){
+                    case 'attach':
+                        attachPageScript();
+                        break;
+					case 'MediaPlayPause':
+                        window.postMessage('MediaPlayPause', pageDomain);
+                        break;
+					case 'MediaPlay':
+                        window.postMessage('MediaPlay', pageDomain);
+                        break;
+					case 'MediaPause':
+                        window.postMessage('MediaPause', pageDomain);
+                        break;
+					case 'MediaTrackNext':
+                        window.postMessage('MediaTrackNext', pageDomain);
+                        break;
+					case 'MediaTrackPrevious':
+                        window.postMessage('MediaTrackPrevious', pageDomain)
+                        break;
+					case 'MediaStop':
+                        window.postMessage('MediaStop', pageDomain)
+                        break;
+					case 'detach':
+                        try {
+                            window.removeEventListener('message', messageRelay)
+                            document.body.removeChild(pageScript);
+                        }
+                        catch (exception) {
+                            //console.log("cannot detach youtube page script because page is closed or otherwise innaccessible.");
+                        }
+                        break;
+                }
+            });
 
-        self.port.on("attach", attachPageScript);
-
-        self.port.on("MediaPlayPause", function () {
-            window.postMessage("MediaPlayPause", pageDomain)
-        });
-        self.port.on("MediaPlay", function () {
-            window.postMessage("MediaPlay", pageDomain)
-        });
-        self.port.on("MediaPause", function () {
-            window.postMessage("MediaPause", pageDomain)
-        });
-        self.port.on("MediaTrackNext", function () {
-            window.postMessage("MediaTrackNext", pageDomain)
-        });
-        self.port.on("MediaTrackPrevious", function () {
-            window.postMessage("MediaTrackPrevious", pageDomain)
-        });
-        self.port.on("MediaStop", function () {
-            window.postMessage("MediaStop", pageDomain)
-        });
-
-        function messageRelay(message)
-        {
-            //console.log(event.data);
-            self.port.emit(message.data);            
+            function messageRelay(message)
+            {
+                port.postMessage(message);            
+            }
+            window.addEventListener('message', messageRelay);
+            
+            port.onDisconnect.addListener(setTimeout(setupCommunicationChannel, 1000));
         }
-        window.addEventListener("message", messageRelay);
-
-        self.port.on("detach", function () {
-            try {
-                window.removeEventListener("message", messageRelay)
-                document.body.removeChild(pageScript);
-            }
-            catch (exception) {
-                //console.log("cannot detach youtube page script because page is closed or otherwise innaccessible.");
-            }
-        });
+        setupCommunicationChannel();
     };
 
 	var intervalId = setInterval(attemptToAttachPageScript, checkForPlayerInteval);

@@ -21,7 +21,7 @@ MediaKeys.init = function() {
     };
 
     window.addEventListener("message", function (event) {
-        switch (event.data) {
+        switch (event) {
             case "MediaPlayPause":
                 var status = player.getPlayerState();
                 if (status != PlayerStates.playing) {
