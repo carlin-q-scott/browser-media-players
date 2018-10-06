@@ -84,31 +84,36 @@ MediaKeys.Init = function () {
 		else Notification.requestPermission().then(function (result) { if (result == 'granted') setupTrackInfoUpdates(); });
 	}
 
-	let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
+	function setupCommunicationChannel(){
+		let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
 		
-	port.onMessage.addListener(request => {
-		console.log(`page script received ${request}`);
-		switch (request) {
-			case "MediaPlayPause":
-				MediaPlayPause(port.postMessage);
-				break;
+		port.onMessage.addListener(request => {
+			console.log(`page script received ${request}`);
+			switch (request) {
+				case "MediaPlayPause":
+					MediaPlayPause(port.postMessage);
+					break;
 
-			case "MediaNextTrack":
-				MediaNextTrack(port.postMessage);
-				break;
+				case "MediaNextTrack":
+					MediaNextTrack(port.postMessage);
+					break;
 
-			case "MediaPrevTrack":
-				MediaPrevTrack(port.postMessage);
-				break;
+				case "MediaPrevTrack":
+					MediaPrevTrack(port.postMessage);
+					break;
 
-			case "MediaStop":
-				MediaStop(port.postMessage);
-				break;
+				case "MediaStop":
+					MediaStop(port.postMessage);
+					break;
 
-			default:
-				break;
-		}
-	});
+				default:
+					break;
+			}
+		});
+
+		port.onDisconnect.addListener(setTimeout(setupCommunicationChannel, 1000));
+	}
+	setupCommunicationChannel();
 };
 
 MediaKeys.Init();
