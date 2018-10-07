@@ -47,6 +47,14 @@
             "global": true
         }
     },
+    "page_action": {
+        "browser_style": true,
+        "default_icon": {
+          "19": "img/icon-inactive-19.png",
+          "38": "img/icon-inactive-38.png"
+        },
+        "default_title": "Pin Media Keys to this tab"
+    },
     "content_scripts": [
         {
             "matches": [
