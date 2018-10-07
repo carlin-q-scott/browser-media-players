@@ -13,7 +13,7 @@ MediaKeys.Init = function()
         //console.log(`attempting to find youtube player. ${maxPlayerLoadTime} millis remaining...`)
         maxPlayerLoadTime -= checkForPlayerInteval;
         if (maxPlayerLoadTime == 0) {
-            console.log('didn\'t find youtube player');
+            // console.log('didn\'t find youtube player');
             clearInterval(intervalId);
             // self.port.emit('self-destruct');
             return;
@@ -35,7 +35,6 @@ MediaKeys.Init = function()
             let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
             
             port.onMessage.addListener(message => {
-                console.log(`youtube orchestrator about to handle ${message}`);
                 switch (message){
                     case 'attach':
                         attachPageScript();
