@@ -72,11 +72,11 @@ MediaKeys.Init = function()
 
             function messageRelay(message)
             {
-                port.postMessage(message);            
+                port.postMessage(message.data);            
             }
             window.addEventListener('message', messageRelay);
             
-            port.onDisconnect.addListener(setTimeout(setupCommunicationChannel, 1000));
+            port.onDisconnect.addListener(() => setTimeout(setupCommunicationChannel, 1000));
         }
         setupCommunicationChannel();
     };

@@ -111,7 +111,7 @@ MediaKeys.Init = function () {
 			}
 		});
 
-		port.onDisconnect.addListener(setTimeout(setupCommunicationChannel, 1000));
+		port.onDisconnect.addListener(() => setTimeout(setupCommunicationChannel, 1000));
 	}
 	setupCommunicationChannel();
 };
