@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "browser-media-keys",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "author": "Carlin Scott",
-    "homepage_url": "https://github.com/carlin-q-scott/browser-media-keys",
+    "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
     "description": "Lets you control many popular website media players using media key events",
     "icons": {
         "64": "icon.png"
@@ -16,7 +16,6 @@
     "background": {
         "page": "index.html"
     },
-    "permissions": ["storage"],
     "commands": {
         "MediaPlayPause": {
             "description": "toggles play state of the last active media website",
@@ -339,12 +338,34 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/play.pocketcasts.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://play.pocketcasts.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/di.fm-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
                 "*://*.di.fm/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
+                "data/udemy.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [ 
+              "*://*.udemy.com/*"
             ]
         }
     ],
