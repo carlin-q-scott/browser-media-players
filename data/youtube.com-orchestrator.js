@@ -32,7 +32,7 @@ MediaKeys.Init = function()
         attachPageScript();
         
         function setupCommunicationChannel(){
-            let port = browser.runtime.connect('jid1-4GP7z3tkUd3Tzg@jetpack', {name: window.location.host});
+            let port = browser.runtime.connect(browser.runtime.id, {name: window.location.host});
             
             port.onMessage.addListener(message => {
                 switch (message){
