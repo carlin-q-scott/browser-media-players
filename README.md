@@ -27,10 +27,31 @@ More details about jpm can be found at https://developer.mozilla.org/en-US/Add-o
 
 Testing
 -------
-To start the browser test environment without running tests, select Debug->'Start Debugging' from the VSCode menu bar.
+To start the browser test environment without running tests, select Debug->'Start Debugging' from the VSCode menu bar. 
 
 ```
 Chrome/Opera Debugging: You must load the extension yourself from the extension manager, using the "Load unpacked extension..." option.
 ```
 
 Pandora, Youtube and Spotify also can be launched in the test environment. e.g. `npm run pandora`
+
+
+Packing
+-------
+Always start with Firefox, because it knows better than the other packers of what is included in the webextension.
+
+### Firefox
+The npm build script will generate a zip file that's ready for uploading to Firefox after removing some files.
+
+`npm run build`
+
+The file path will be output in the console. Open it and remove the following files: jsconfig.json, package-lock.json, package.json, tests (folder), data/pageMods.json.
+
+### Opera
+1. Extract the zip file created for Firefox to a folder
+2. Open Opera
+3. Go to the extension manager
+4. Pack extension, providing the secret key not in this repo
+
+### Chrome
+I haven't done this one yet but it's probably the same as Opera.
