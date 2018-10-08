@@ -1,12 +1,14 @@
 {
     "manifest_version": 2,
+    "short_name": "Media Keys",
     "name": "browser-media-keys",
     "version": "2.0.0",
     "author": "Carlin Scott",
     "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
     "description": "Lets you control many popular website media players using media key events",
     "icons": {
-        "64": "icon.png"
+        "64": "icon64.png",
+        "128": "icon128.png"
     },
     "applications": {
         "gecko": {

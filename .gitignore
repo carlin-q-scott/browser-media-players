@@ -7,3 +7,4 @@ node_modules
 *.zip
 lib/browser-polyfill.min.*
 web-ext-artifacts/**
+icon425.png
