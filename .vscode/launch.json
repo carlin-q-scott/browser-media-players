@@ -16,7 +16,7 @@
             "reAttach": true,
             "addonType": "webExtension",
             "addonPath": "${workspaceFolder}"
-        }
+        },
         {
             "name": "Launch Opera",
             "type": "chrome",
