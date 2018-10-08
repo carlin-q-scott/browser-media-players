@@ -67,6 +67,7 @@ MediaKeys.init = function() {
             latestState = state;
             switch (state) {
                 case PlayerStates.playing:
+                case PlayerStates.unstarted:
                     window.postMessage("Play", pageDomain);
                     break;
                 case PlayerStates.paused:
