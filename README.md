@@ -20,7 +20,7 @@ Please find us on GitHub if you'd like to request features, post issues or contr
 Development Environment
 =======================
 
-This add-on utilizes ``web-ex`` for building the extension and the ``Debugger for Firefox`` Visual Studio Code extension for debugging.  `npm install` will set up web-ex for you provided you use the npm scripts included in package.json or have ./node_modules/.bin in your PATH.
+This add-on utilizes ``web-ex`` for building the extension and the ``Debugger for Firefox/Chrome`` Visual Studio Code extensions for debugging.  `npm install` will set up web-ex for you provided you use the npm scripts included in package.json or have ./node_modules/.bin in your PATH.
 
 More details about jpm can be found at https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm.
 
@@ -28,5 +28,9 @@ More details about jpm can be found at https://developer.mozilla.org/en-US/Add-o
 Testing
 -------
 To start the browser test environment without running tests, select Debug->'Start Debugging' from the VSCode menu bar.
+
+```
+Chrome/Opera Debugging: You must load the extension yourself from the extension manager, using the "Load unpacked extension..." option.
+```
 
 Pandora, Youtube and Spotify also can be launched in the test environment. e.g. `npm run pandora`

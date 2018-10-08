@@ -6,3 +6,4 @@ node_modules
 *.log
 *.zip
 lib/browser-polyfill.min.*
+web-ext-artifacts/**

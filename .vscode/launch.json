@@ -2,9 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch addon",
+            "name": "Launch Firefox",
             "type": "firefox",
             "request": "launch",
+            "reAttach": true,
+            "addonType": "webExtension",
+            "addonPath": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "reAttach": true,
+            "addonType": "webExtension",
+            "addonPath": "${workspaceFolder}"
+        }
+        {
+            "name": "Launch Opera",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe",
             "reAttach": true,
             "addonType": "webExtension",
             "addonPath": "${workspaceFolder}"
