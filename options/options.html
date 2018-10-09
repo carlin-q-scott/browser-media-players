@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="options.js"></script>
+</head>
+<body>
+    <form id="commands">
+        <strong>Media Event Mappings</strong>
+        <p>These are the keys or key combinations that will fire the specified media control events.</p>
+        <label>Play/Pause: <input type="text" id="MediaPlayPause"></label><br>
+        <label>Next Track: <input type="text" id="MediaNextTrack"></label><br>
+        <label>Previous Track: <input type="text" id="MediaPrevTrack"></label><br>
+        <label>Stop: <input type="text" id="MediaStop"></label><br>
+        <button type="submit">Save</button>
+    </form><br>
+    <form id="preferences">
+        <strong>Preferences</strong>
+        <p>Various preferences for add-on behavior.</p>
+        <label>Autoplay: <input type="checkbox" id="autoplay"></label><br>
+        <button type="submit">Save</button>
+    </form><br>
+    <form id="runtimeContentScripts">
+        <strong>Custom Media Player Domains</strong>
+        <p>Custom domains for media players that can be self-hosted.</p>
+        <label>Jamstash: <input type="text" id="jamstash"></label><br>
+        <label>Plex: <input type="text" id="plex"></label><br>
+        <label>Madsonic: <input type="text" id="madsonic"></label><br>
+        <label>Subsonic: <input type="text" id="subsonic"></label><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

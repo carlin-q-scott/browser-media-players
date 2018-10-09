@@ -1,4 +1,5 @@
 {
+    "$schema": "http://json.schemastore.org/webextension",
     "manifest_version": 2,
     "short_name": "Media Keys",
     "name": "browser-media-keys",
@@ -48,6 +49,16 @@
             "global": true
         }
     },
+    "options_ui": {
+        "page": "options/options.html",
+        "browser_style": true
+    },
+    "permissions": [
+        "storage"
+    ],
+    "optional_permissions": [
+        "*://*/"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -210,8 +221,7 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.plex.tv/*",
-                "http://127.0.0.1:32400/*"
+                "*://*.plex.tv/*"
             ]
         },
         {
