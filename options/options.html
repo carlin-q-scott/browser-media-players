@@ -7,36 +7,41 @@
     <link rel="stylesheet" href="extension.css">
     <style>
         label { width: 12ch; }
+        @media (-webkit-min-device-pixel-ratio:0) {
+            div#commandsDiv { display: none}
+        }
     </style>
 </head>
 <body>
-    <header class="panel-section panel-section-header">
-        <div class="text-section-header">Media Event Mappings</div>
-    </header>
-    <form id="commands">
-        <p>These are the keys or key combinations that will fire the specified media control events.</p>
-        <div class="panel-section panel-section-formElements">
-            <div class="panel-formElements-item">
-                <label class="browser-style" for="MediaPlayPause">Play/Pause:</label>
-                <input type="text" id="MediaPlayPause" />
+    <div id="commandsDiv">
+        <header class="panel-section panel-section-header">
+            <div class="text-section-header">Media Event Mappings</div>
+        </header>
+        <form id="commands">
+            <p>These are the keys or key combinations that will fire the specified media control events.</p>
+            <div class="panel-section panel-section-formElements">
+                <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaPlayPause">Play/Pause:</label>
+                    <input type="text" id="MediaPlayPause" />
+                </div>
+                <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaNextTrack">Next Track:</label>
+                    <input type="text" id="MediaNextTrack" />
+                </div>
+                <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaPrevTrack">Previous Track:</label>
+                    <input type="text" id="MediaPrevTrack" />
+                </div>
+                <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaStop">Stop:</label>
+                    <input type="text" id="MediaStop" />
+                </div>
+                <div class="panel-formElements-item">
+                    <button type="submit" class="browser-style">Save</button>
+                </div>
             </div>
-            <div class="panel-formElements-item">
-                <label class="browser-style" for="MediaNextTrack">Next Track:</label>
-                <input type="text" id="MediaNextTrack" />
-            </div>
-            <div class="panel-formElements-item">
-                <label class="browser-style" for="MediaPrevTrack">Previous Track:</label>
-                <input type="text" id="MediaPrevTrack" />
-            </div>
-            <div class="panel-formElements-item">
-                <label class="browser-style" for="MediaStop">Stop:</label>
-                <input type="text" id="MediaStop" />
-            </div>
-            <div class="panel-formElements-item">
-                <button type="submit" class="browser-style">Save</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
     
     <header class="panel-section panel-section-header">
         <div class="text-section-header">Preferences</div>
