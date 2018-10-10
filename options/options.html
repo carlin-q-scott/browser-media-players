@@ -2,33 +2,83 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="lib/browser-polyfill.min.js"></script>
+    <script src="/lib/browser-polyfill.min.js"></script>
     <script src="options.js"></script>
+    <style>
+        label { width: 90px; }
+    </style>
 </head>
 <body>
+    <header class="panel-section panel-section-header">
+        <div class="text-section-header">Media Event Mappings</div>
+    </header>
     <form id="commands">
-        <strong>Media Event Mappings</strong>
         <p>These are the keys or key combinations that will fire the specified media control events.</p>
-        <label>Play/Pause: <input type="text" id="MediaPlayPause"></label><br>
-        <label>Next Track: <input type="text" id="MediaNextTrack"></label><br>
-        <label>Previous Track: <input type="text" id="MediaPrevTrack"></label><br>
-        <label>Stop: <input type="text" id="MediaStop"></label><br>
-        <button type="submit">Save</button>
-    </form><br>
+        <div class="panel-section panel-section-formElements">
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="MediaPlayPause">Play/Pause:</label>
+                <input type="text" id="MediaPlayPause" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="MediaNextTrack">Next Track:</label>
+                <input type="text" id="MediaNextTrack" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="MediaPrevTrack">Previous Track:</label>
+                <input type="text" id="MediaPrevTrack" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="MediaStop">Stop:</label>
+                <input type="text" id="MediaStop" />
+            </div>
+            <div class="panel-formElements-item">
+                <button type="submit" class="browser-style">Save</button>
+            </div>
+        </div>
+    </form>
+    
+    <header class="panel-section panel-section-header">
+        <div class="text-section-header">Preferences</div>
+    </header>
     <form id="preferences">
-        <strong>Preferences</strong>
         <p>Various preferences for add-on behavior.</p>
-        <label>Autoplay: <input type="checkbox" id="autoplay"></label><br>
-        <button type="submit">Save</button>
-    </form><br>
+        <div class="panel-section panel-section-formElements">
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="autoplay">Autoplay:</label>
+                <input type="checkbox" id="autoplay" />
+            </div>
+            <div class="panel-formElements-item">
+                <button type="submit" class="browser-style pane-section-footer-button">Save</button>
+            </div>
+        </div>
+    </form>
+    
+    <header class="panel-section panel-section-header">
+        <div class="text-section-header">Media Player Domains</div>
+    </header>
     <form id="runtimeContentScripts">
-        <strong>Custom Media Player Domains</strong>
         <p>Custom domains for media players that can be self-hosted.</p>
-        <label>Jamstash: <input type="text" id="jamstash"></label><br>
-        <label>Plex: <input type="text" id="plex"></label><br>
-        <label>Madsonic: <input type="text" id="madsonic"></label><br>
-        <label>Subsonic: <input type="text" id="subsonic"></label><br>
-        <button type="submit">Save</button>
+        <div class="panel-section panel-section-formElements">
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="jamstash">Jamstash:</label>
+                <input type="text" id="jamstash" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="plex">Plex:</label>
+                <input type="text" id="plex" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="madsonic">Madsonic:</label>
+                <input type="text" id="madsonic" />
+            </div>
+            <div class="panel-formElements-item">
+                <label class="browser-style" for="subsonic">Subsonic:</label>
+                <input type="text" id="subsonic" />
+            </div>
+            <div class="panel-formElements-item">
+                <button type="submit" class="browser-style">Save</button>
+            </div>
+        </div>
     </form>
 </body>
 </html>
