@@ -6,6 +6,18 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
+            "reloadOnChange": {
+                "watch": "${workspaceFolder}/**/*.js",
+                "ignore": "**/node_modules/**"
+            },
+            "addonType": "webExtension",
+            "addonPath": "${workspaceFolder}"
+        },
+        {
+            "name": "Attach to Firefox",
+            "type": "firefox",
+            "request": "attach",
+            "port": 6005,
             "addonType": "webExtension",
             "addonPath": "${workspaceFolder}"
         },
@@ -13,18 +25,12 @@
             "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
-            "reAttach": true,
-            "addonType": "webExtension",
-            "addonPath": "${workspaceFolder}"
         },
         {
             "name": "Launch Opera",
             "type": "chrome",
             "request": "launch",
-            "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe",
-            "reAttach": true,
-            "addonType": "webExtension",
-            "addonPath": "${workspaceFolder}"
+            "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe"
         }
     ]
 }

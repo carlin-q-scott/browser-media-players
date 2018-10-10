@@ -5,54 +5,47 @@
  * See https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
 MediaKeys.Init = function () {
-	function MediaPlay(sendResponse) {
+	function MediaPlay() {
 		var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
 		if (playButton == null) return;
 		playButton.click();
-		// sendResponse("Play");
 	}
 
-	function MediaPause(sendResponse) {
-		var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton)
+	function MediaPause() {
+		var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer)
 		if (pauseButton != null) {
 			pauseButton.click();
-			// sendResponse("Pause");
 		}
 	}
 
-	function MediaPlayPause(sendResponse) {
+	function MediaPlayPause() {
 		var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
 		if (playButton != null) {
 			playButton.click();
-			// sendResponse("Play");
 		}
 		else {
 			var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
 			if (pauseButton == null) return;
 			pauseButton.click();
-			// sendResponse("Pause");
 		}
 	}
 
-	function MediaNextTrack(sendResponse) {
+	function MediaNextTrack() {
 		var skipButton = MediaKeys.GetSingleElementByXpath(MediaKeys.skipButton, MediaKeys.basePlayer);
 		if (skipButton == null) return;
 		skipButton.click();
-		// sendResponse("Next");
 	}
 
-	function MediaPrevTrack(sendResponse) {
+	function MediaPrevTrack() {
 		var previousButton = MediaKeys.GetSingleElementByXpath(MediaKeys.previousButton, MediaKeys.basePlayer);
 		if (previousButton == null) return;
 		previousButton.click();
-		// sendResponse("Previous");
 	}
 
-	function MediaStop(sendResponse) {
+	function MediaStop() {
 		var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
 		if (pauseButton == null) return;
 		pauseButton.click();
-		// sendResponse("Stop");
 	}
 
 	if (MediaKeys.trackInfo && Notification.permission != 'denied') {
@@ -91,25 +84,25 @@ MediaKeys.Init = function () {
 			//console.log(`page script received ${request}`);
 			switch (request) {
 				case "MediaPlay":
-					MediaPlay(port.postMessage);
+					MediaPlay();
 					break;
 				case "MediaPause":
-					MediaPause(port.postMessage);
+					MediaPause();
 					break;
 				case "MediaPlayPause":
-					MediaPlayPause(port.postMessage);
+					MediaPlayPause();
 					break;
 
 				case "MediaNextTrack":
-					MediaNextTrack(port.postMessage);
+					MediaNextTrack();
 					break;
 
 				case "MediaPrevTrack":
-					MediaPrevTrack(port.postMessage);
+					MediaPrevTrack();
 					break;
 
 				case "MediaStop":
-					MediaStop(port.postMessage);
+					MediaStop();
 					break;
 
 				default:

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <script src="/lib/browser-polyfill.min.js"></script>
-    <script src="options.js"></script>
+    <script type='module' src="options_ui.js"></script>
     <link rel="stylesheet" href="extension.css">
     <style>
         label { width: 12ch; }
@@ -37,6 +37,14 @@
                     <input type="text" id="MediaStop" />
                 </div>
                 <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaPlay">Play:</label>
+                    <input type="text" id="MediaPlay" />
+                </div>
+                <div class="panel-formElements-item">
+                    <label class="browser-style" for="MediaPause">Pause:</label>
+                    <input type="text" id="MediaPause" />
+                </div>
+                <div class="panel-formElements-item">
                     <button type="submit" class="browser-style">Save</button>
                 </div>
             </div>
@@ -62,7 +70,7 @@
     <header class="panel-section panel-section-header">
         <div class="text-section-header">Media Player Domains</div>
     </header>
-    <form id="runtimeContentScripts">
+    <form id="contentScripts">
         <p>Custom domains for media players that can be self-hosted.</p>
         <div class="panel-section panel-section-formElements">
             <div class="panel-formElements-item">
