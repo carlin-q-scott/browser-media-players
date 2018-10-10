@@ -50,6 +50,7 @@ function getPreferences(defaultPreferences) {
 function setPreferences(preferences) {
     Object.keys(preferences).forEach(pref => {
         let prefElement = document.getElementById(pref);
+        if (!prefElement) return;
         switch (prefElement.type){
             case 'checkbox':
                 prefElement.checked = preferences[pref];
@@ -62,7 +63,7 @@ function setPreferences(preferences) {
 
 function saveCommands() {
     let commands = getPreferences(defaultCommands);
-    browser.storage.sync.set({
+    browser.storage.local.set({
         commands: commands
     });
     Object.keys(commands).forEach(comm => {
@@ -85,17 +86,23 @@ function saveRuntimeContentScripts() {
     });
 }
 
-async function restoreOptions() {
-    let defaultOptions = {
+function restoreOptions() {
+    let defaultSyncedOptions = {
         preferences: defaultPreferences,
-        commands: defaultCommands,
         runtimeContentScripts: defaultRuntimeContentScripts
     };
     
-    var options = await browser.storage.sync.get(defaultOptions);
-    setPreferences(options.commands);
-    setPreferences(options.runtimeContentScripts);
-    setPreferences(options.preferences);
+    browser.storage.sync.get(defaultSyncedOptions).then(options => {
+        setPreferences(options.runtimeContentScripts);
+        setPreferences(options.preferences);
+    });
+
+    browser.storage.local.get({
+        commands: defaultCommands
+    })
+    .then(options => {
+        setPreferences(options.commands);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
