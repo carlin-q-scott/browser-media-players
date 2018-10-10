@@ -10,7 +10,7 @@ export default class CommandOptions extends Options {
             event.key;
         
         // fixup keyCombo
-        keyCombo = keyCombo.replace('Arrow','')
+        keyCombo = keyCombo.replace('Arrow','').replace('TrackNext', 'NextTrack').replace('TrackPrevious','PrevTrack');
         
         event.stopPropagation();
         event.preventDefault();
@@ -35,9 +35,7 @@ export default class CommandOptions extends Options {
                 MediaPlayPause: 'MediaPlayPause',
                 MediaNextTrack: 'MediaNextTrack',
                 MediaPrevTrack: 'MediaPrevTrack',
-                MediaStop: 'MediaStop',
-                MediaPlay: '',
-                MediaPause: ''
+                MediaStop: 'MediaStop'
             },
             'local'
         );
