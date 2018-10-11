@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Madsonic Player</title>
+</head>
+<body>
+    <h1 id='status'>Pause</h1>
+    <script>
+        function onStart(event)
+        {
+            document.getElementById("stopButton").style = ""
+            document.getElementById("startButton").style = "display: none"
+            document.getElementById("status").innerHTML = "Play";
+        }
+        
+        function onStop(event) {
+            document.getElementById("startButton").style = ""
+            document.getElementById("stopButton").style = "display: none"
+            document.getElementById("status").innerHTML = "Pause";
+        }
+    
+        function onNext()
+        {
+            document.getElementById("status").innerHTML = "Next";
+        }
+    
+        function onPrevious()
+        {
+            document.getElementById("status").innerHTML = "Previous";
+        }
+    </script>
+    <span id="fastpreviousButton" class="fa-stack fa-lg" onclick="onRewind()" title="Fast Rewind">rewind</span>
+    <span id="previousButton" class="fa-stack fa-lg" onclick="onPrevious()" title="Previous">previous track</span>
+    <span id="startButton" class="fa-stack fa-lg" onclick="onStart()" title="Play" style="display: block;">play</span>
+    <span id="stopButton" class="fa-stack fa-lg" onclick="onStop()" style="display: none;" title="Stop">pause</span>
+    <span id="nextButton" class="fa-stack fa-lg" onclick="onNext(repeatEnabled)" title="Next">next track</span>
+    <span id="fastnextButton" class="fa-stack fa-lg" onclick="onForward()" title="Fast Forward">fast-forward</span>   
+</body>
+</html>
