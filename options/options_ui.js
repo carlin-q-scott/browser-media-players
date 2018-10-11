@@ -6,6 +6,11 @@ let commandOptions = new CommandOptions();
 let userOptions = new UserOptions();
 let contentScriptOptions = new ContentScriptOptions();
 
+document.addEventListener('DOMContentLoaded', () => {
+    commandOptions.updatePage();
+    userOptions.updatePage();
+    contentScriptOptions.updatePage();
+});
 document.addEventListener('keydown', commandOptions.handleKeyDown);
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {

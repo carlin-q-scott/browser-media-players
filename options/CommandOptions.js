@@ -2,12 +2,16 @@ import Options from './Options.js';
 
 export default class CommandOptions extends Options {
     handleKeyDown(event) {
+        if (event.key == 'Tab') return;
+        
         var keyCombo =
             (event.ctrlKey ? 'Ctrl+' : '') +
             (event.shiftKey ? 'Shift+' : '') +
             (event.altKey ? 'Alt+' : '') +
-            (event.metaKey ? 'Meta' : '') +
-            event.key;
+            (event.metaKey ? 'Command+' : '');
+            
+        if (/(Control|Shift|Alt|Command)/.test(event.key) == false) 
+            keyCombo += event.key;
         
         // fixup keyCombo
         keyCombo = keyCombo.replace('Arrow','').replace('TrackNext', 'NextTrack').replace('TrackPrevious','PrevTrack');
@@ -15,17 +19,6 @@ export default class CommandOptions extends Options {
         event.stopPropagation();
         event.preventDefault();
         event.srcElement.value = keyCombo;
-    }
-
-    updateBindings(commands) {
-        Object.keys(commands).forEach(comm => {
-            browser.commands.update({
-                name: comm,
-                shortcut: commands[comm]
-            })
-            .then(console.log)
-            .catch(console.error);
-        });
     }
 
     constructor() {
@@ -39,5 +32,22 @@ export default class CommandOptions extends Options {
             },
             'local'
         );
+    }
+
+    /** @description activates command bindings
+     *  @param {object} options for command bindings
+     */
+    static activate(options = this.options) {
+        Object.keys(options).forEach(comm => {
+            if (options[comm] == ''){
+                browser.commands.reset(comm);
+            }
+            else {
+                browser.commands.update({
+                    name: comm,
+                    shortcut: options[comm]
+                })
+            }
+        });
     }
 }

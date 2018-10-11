@@ -9,7 +9,7 @@ class Options {
         this.options = defaults;
         this.storageLocation = storageLocation;
         
-        this.updateFromStorage().then(() => this.updatePage());
+        this.initializing = this.updateFromStorage();
     }
 
     /** @description wraps the options in a browser storage object
@@ -52,16 +52,18 @@ class Options {
     
     /** @description update the options page */
     updatePage() {
-        Object.keys(this.options).forEach(opt => {
-            let prefElement = document.getElementById(opt);
-            if (!prefElement) return;
-            switch (prefElement.type){
-                case 'checkbox':
-                    prefElement.checked = this.options[opt];
-                    break;
-                default:
-                    prefElement.value = this.options[opt];
-            }
+        this.initializing.then(() => {
+            Object.keys(this.options).forEach(opt => {
+                let prefElement = document.getElementById(opt);
+                if (!prefElement) return;
+                switch (prefElement.type){
+                    case 'checkbox':
+                        prefElement.checked = this.options[opt];
+                        break;
+                    default:
+                        prefElement.value = this.options[opt];
+                }
+            });
         });
     }
     
