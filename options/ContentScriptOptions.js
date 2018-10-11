@@ -25,10 +25,10 @@ class ContentScriptOptions extends Options {
         super(
             'contentScripts',
             {
-                jamstash: "",
-                plex: "",
-                madsonic: "",
-                subsonic: ""
+                jamstash: '',
+                plex: '',
+                madsonic: '',
+                subsonic: ''
             },
             'sync'
         );
