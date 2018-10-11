@@ -21,4 +21,6 @@ function onPrefChange(storageChange) { //re-register content scripts
 browser.storage.onChanged.addListener(onPrefChange);
 
 new ContentScriptOptions().activate();
-new CommandOptions().activate();
+
+if (!window.matchMedia('-webkit-min-device-pixel-ratio:0').matches)   // Firefox
+    new CommandOptions().activate();

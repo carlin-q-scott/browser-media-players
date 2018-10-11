@@ -46,8 +46,8 @@ class ContentScriptOptions extends Options {
             if (match.length > 0) {
                 let matches = [ match ];
                 let js = manifest[siteName];
-                console.log(`registering content scripts with ${siteName} (${match})`, js);
-                if (window.matchMedia('-webkit-min-device-pixel-ratio:0').matches) {   // Chrome or Opera
+
+                if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) {   // Chrome or Opera
                     browser.tabs.onUpdated.addListener(tabInfo => {
                         if (new RegExp(match).test(tabInfo.url)) {
                             browser.tabs.executeScript(tabInfo.id, { js });
@@ -57,6 +57,7 @@ class ContentScriptOptions extends Options {
                 else { // firefox
                     browser.contentScripts.register({ matches, js });
                 }
+
                 browser.tabs.query({
                     url: matches
                 })

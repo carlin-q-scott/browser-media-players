@@ -1,6 +1,6 @@
 import Options from './Options.js';
 
-export default class CommandOptions extends Options {
+class CommandOptions extends Options {
     handleKeyDown(event) {
         if (event.key == 'Tab') return;
         if (event.srcElement.parentElement.parentElement.parentElement.id != 'commands') return;
@@ -39,6 +39,7 @@ export default class CommandOptions extends Options {
      *  @param {object} options for command bindings
      */
     static activate(options) {
+        if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) return;
         if (!options) throw new Error('options are required');
 
         Object.keys(options).forEach(comm => {
@@ -58,3 +59,5 @@ export default class CommandOptions extends Options {
         return this.initializing.then(CommandOptions.activate);
     }
 }
+
+export default CommandOptions;
