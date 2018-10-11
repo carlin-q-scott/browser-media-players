@@ -3,6 +3,7 @@ import Options from './Options.js';
 export default class CommandOptions extends Options {
     handleKeyDown(event) {
         if (event.key == 'Tab') return;
+        if (event.srcElement.parentElement.parentElement.parentElement.id != 'commands') return;
         
         var keyCombo =
             (event.ctrlKey ? 'Ctrl+' : '') +
@@ -37,7 +38,9 @@ export default class CommandOptions extends Options {
     /** @description activates command bindings
      *  @param {object} options for command bindings
      */
-    static activate(options = this.options) {
+    static activate(options) {
+        if (!options) throw new Error('options are required');
+
         Object.keys(options).forEach(comm => {
             if (options[comm] == ''){
                 browser.commands.reset(comm);
@@ -49,5 +52,9 @@ export default class CommandOptions extends Options {
                 })
             }
         });
+    }
+
+    async activate() {
+        return this.initializing.then(CommandOptions.activate);
     }
 }

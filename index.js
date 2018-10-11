@@ -2,14 +2,8 @@ import hotkeyManager from './lib/hotkeyManager.js';
 import pageWorkerManager from './lib/pageWorkerManager.js';
 import CommandOptions from './options/CommandOptions.js';
 import ContentScriptOptions from './options/ContentScriptOptions.js';
-import UserOptions from './options/UserOptions.js';
 
 pageWorkerManager.Init();
-
-function unload() {
-    hotkeyManager.UnregisterHotkeys();
-    pageWorkerManager.Destroy();
-}
 
 function onPrefChange(storageChange) { //re-register content scripts
     hotkeyManager.UnregisterHotkeys();
@@ -25,3 +19,6 @@ function onPrefChange(storageChange) { //re-register content scripts
 }
 
 browser.storage.onChanged.addListener(onPrefChange);
+
+new ContentScriptOptions().activate();
+new CommandOptions().activate();

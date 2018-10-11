@@ -1,8 +1,12 @@
 import Options from './Options.js'
 
+const extensionBaseUrlRegex = /moz-extension:\/\/[\d\w\-]+/;
+
 class Manifest {
     getContentScriptsFor(site) {
-        return manifest.content_scripts.find(cs => cs.js.some(jsf => jsf.indexOf(site) > 0)).js;
+        return this.manifest.content_scripts.find(cs => cs.js.some(jsf => jsf.indexOf(site) > 0)).js.map(script => {
+            return { file: script.replace(extensionBaseUrlRegex, '') }; 
+        });
     }
     get jamstash(){ return this.getContentScriptsFor('jamstash') }
     get plex(){ return this.getContentScriptsFor('plex') }
@@ -30,35 +34,60 @@ class ContentScriptOptions extends Options {
         );
     }
     
-    /* global chrome: false */
-    static activate(options = this.options) {
+    /** @description activates custom site matches
+     *  @param {object} options for custom sites
+     */
+    static activate(options) {
+        if (!options) throw new Error('options are required');
+
         // todo: handle removal of old matches
-        options.entries.forEach(siteName => {
-            let matches = options[siteName];
-            if (matches.length > 0) {
+        Object.keys(options).forEach(siteName => {
+            let match = options[siteName];
+            if (match.length > 0) {
+                let matches = [ match ];
                 let js = manifest[siteName];
-                if (chrome) {   // or Opera
-                    var requestPermissions = function(){
-                        chrome.permissions.request({
-                            origins: matches
-                        }, granted => {
-                            if (granted) {
-                                chrome.tabs.onUpdated.addListener(tabInfo => {
-                                    if (new RegExp(matches).test(tabInfo.url)) {
-                                        chrome.tabs.executeScript(tabInfo.id, { js });
-                                    }
-                                });
-                            }
-                            else if (confirm("You must grant permission for 'Media Keys' to this site in order for it to control the media player on the site. Will you accept the request?")) {
-                                requestPermissions();
-                            }
-                        });
-                    }
-                    requestPermissions();
+                console.log(`registering content scripts with ${siteName} (${match})`, js);
+                if (window.matchMedia('-webkit-min-device-pixel-ratio:0').matches) {   // Chrome or Opera
+                    browser.tabs.onUpdated.addListener(tabInfo => {
+                        if (new RegExp(match).test(tabInfo.url)) {
+                            browser.tabs.executeScript(tabInfo.id, { js });
+                        }
+                    });
                 }
                 else { // firefox
                     browser.contentScripts.register({ matches, js });
                 }
+                browser.tabs.query({
+                    url: matches
+                })
+                .then(tabs => {
+                    tabs.forEach(tabInfo => {
+                        browser.tabs.executeScript(tabInfo.id, { js });
+                    })
+                })
+            }
+        });
+    }
+
+    async activate() {
+        return this.initializing.then(ContentScriptOptions.activate);
+    }
+
+    save() {
+        this.updateFromPage();
+        
+        Object.keys(this.options).forEach(siteName => {
+            let match = this.options[siteName];
+            if (match.length > 0) {
+                let matches = [ match ];
+                browser.permissions.request({
+                    origins: matches
+                }).then(approved => {
+                    if (approved)
+                        browser.storage[this.storageLocation].set(this.forStorage());
+                    else
+                        prompt('you need to approve access to the domain you specified');
+                });
             }
         });
     }

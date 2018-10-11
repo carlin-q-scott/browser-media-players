@@ -26,13 +26,14 @@ class Options {
     }
 
     /** @description updates this object from in browser.storage */
-    updateFromStorage() {
+    async updateFromStorage() {
         // console.log(`loading ${this.storeKey} from storage`);
         return browser.storage[this.storageLocation]
             .get(this.forStorage(this.options))
             .then(storedOptions => {
                 // console.log(storedOptions);
                 this.options = storedOptions[this.storeKey];
+                return this.options;
             });
     }
 
