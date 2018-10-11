@@ -18,22 +18,23 @@ MediaKeys.init = function() {
     };
     var playVideo = function () {
         player.playVideo();
-        window.postMessage("Play", pageDomain);
     };
     var pauseVideo = function () {
         player.pauseVideo();
-        window.postMessage("Pause", pageDomain);
     };
 
     window.addEventListener("message", function (event) {
         switch (event.data) {
             case "MediaPlayPause":
-                var status = player.getPlayerState();
-                if (status != PlayerStates.playing) {
-                    playVideo();
-                }
-                else {
-                    pauseVideo();
+                switch (player.getPlayerState()) {
+                    case PlayerStates.unstarted:
+                    case PlayerStates.playing:
+                        pauseVideo();
+                        break;
+                    case PlayerStates.ended:
+                    case PlayerStates.paused:
+                        playVideo();
+                        break;
                 }
                 break;
 
