@@ -27,7 +27,7 @@ exports["test play/pause on Pandora.com"] = function(assert, done)
 exports["test skip track on Pandora.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("pandora.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
@@ -50,14 +50,14 @@ exports["test play/pause on tidal.com"] = function(assert, done)
 exports["test play next track on tidal.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("tidal.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
 exports["test play previous track on tidal.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("tidal.com", function() {
-        TestMediaEvent("MediaTrackPrevious", "Previous", assert, done);
+        TestMediaEvent("MediaPrevTrack", "Previous", assert, done);
     });
 };
 
@@ -80,14 +80,14 @@ exports["test play/pause on open.spotify.com"] = function(assert, done)
 exports["test play next track on open.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("open.spotify.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
 exports["test play previous track on open.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("open.spotify.com", function() {
-        TestMediaEvent("MediaTrackPrevious", "Previous", assert, done);
+        TestMediaEvent("MediaPrevTrack", "Previous", assert, done);
     });
 };
 
@@ -110,14 +110,14 @@ exports["test play/pause on player.spotify.com"] = function(assert, done)
 exports["test play next track on player.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("player.spotify.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
 exports["test play previous track on player.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("player.spotify.com", function() {
-        TestMediaEvent("MediaTrackPrevious", "Previous", assert, done);
+        TestMediaEvent("MediaPrevTrack", "Previous", assert, done);
     });
 };
 
@@ -140,14 +140,14 @@ exports["test play/pause on play.spotify.com"] = function(assert, done)
 exports["test play next track on play.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("play.spotify.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
 exports["test play previous track on play.spotify.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("play.spotify.com", function() {
-        TestMediaEvent("MediaTrackPrevious", "Previous", assert, done);
+        TestMediaEvent("MediaPrevTrack", "Previous", assert, done);
     });
 };
 

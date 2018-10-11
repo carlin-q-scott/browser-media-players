@@ -10,10 +10,10 @@ MediaKeys.Init = function()
     var checkForPlayerInteval = 250;
 
     var attemptToAttachPageScript = function() {
-        //console.log(`attempting to find youtube player. ${maxPlayerLoadTime} millis remaining...`)
+        console.log(`attempting to find youtube player. ${maxPlayerLoadTime} millis remaining...`)
         maxPlayerLoadTime -= checkForPlayerInteval;
         if (maxPlayerLoadTime == 0) {
-            // console.log('didn\'t find youtube player');
+            console.warn('didn\'t find youtube player');
             clearInterval(intervalId);
             // self.port.emit('self-destruct');
             return;
@@ -50,11 +50,11 @@ MediaKeys.Init = function()
 					case 'MediaPause':
                         window.postMessage('MediaPause', pageDomain);
                         break;
-					case 'MediaTrackNext':
-                        window.postMessage('MediaTrackNext', pageDomain);
+					case 'MediaNextTrack':
+                        window.postMessage('MediaNextTrack', pageDomain);
                         break;
-					case 'MediaTrackPrevious':
-                        window.postMessage('MediaTrackPrevious', pageDomain)
+					case 'MediaPrevTrack':
+                        window.postMessage('MediaPrevTrack', pageDomain)
                         break;
 					case 'MediaStop':
                         window.postMessage('MediaStop', pageDomain)

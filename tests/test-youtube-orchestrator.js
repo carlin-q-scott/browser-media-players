@@ -44,14 +44,14 @@ exports["test play/pause on YouTube.com"] = function(assert, done)
 exports["test play next track on YouTube.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("youtube.com", function() {
-        TestMediaEvent("MediaTrackNext", "Next", assert, done);
+        TestMediaEvent("MediaNextTrack", "Next", assert, done);
     });
 };
 
 exports["test play previous track on YouTube.com"] = function(assert, done)
 {
     OpenMediaWebsiteMock("youtube.com", function() {
-        TestMediaEvent("MediaTrackPrevious", "Previous", assert, done);
+        TestMediaEvent("MediaPrevTrack", "Previous", assert, done);
     });
 };
 

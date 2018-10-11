@@ -45,12 +45,12 @@ MediaKeys.init = function() {
                 playVideo();
                 break;
 
-            case "MediaTrackNext":
+            case "MediaNextTrack":
                 player.nextVideo();
                 window.postMessage("Next", pageDomain);
                 break;
 
-            case "MediaTrackPrevious":
+            case "MediaPrevTrack":
                 player.previousVideo();
                 window.postMessage("Previous", pageDomain);
                 break;
