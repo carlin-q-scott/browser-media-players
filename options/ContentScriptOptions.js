@@ -45,17 +45,17 @@ class ContentScriptOptions extends Options {
             let match = options[siteName];
             if (match.length > 0) {
                 let matches = [ match ];
-                let js = manifest[siteName];
+                let siteManifest = manifest[siteName];
 
                 if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) {   // Chrome or Opera
                     browser.tabs.onUpdated.addListener(tabInfo => {
                         if (new RegExp(match).test(tabInfo.url)) {
-                            browser.tabs.executeScript(tabInfo.id, { js });
+                            siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
                         }
                     });
                 }
                 else { // firefox
-                    browser.contentScripts.register({ matches, js });
+                    browser.contentScripts.register({ matches, js: siteManifest });
                 }
 
                 browser.tabs.query({
@@ -63,7 +63,7 @@ class ContentScriptOptions extends Options {
                 })
                 .then(tabs => {
                     tabs.forEach(tabInfo => {
-                        browser.tabs.executeScript(tabInfo.id, { js });
+                        siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
                     })
                 })
             }
