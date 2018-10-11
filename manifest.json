@@ -64,7 +64,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.youtube.com/*"
+                "*://*.youtube.com/*",
+                "file:///*/tests/youtube.com.html"
             ],
             "js": [
                 "lib/browser-polyfill.min.js",
@@ -80,7 +81,8 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.pandora.com/*"
+                "*://*.pandora.com/*",
+                "file:///*/tests/pandora.com.html"
             ]
         },
         {

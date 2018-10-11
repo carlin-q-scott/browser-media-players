@@ -6,7 +6,10 @@ if (typeof MediaKeys == "undefined") var MediaKeys = {};
 
 MediaKeys.init = function() {
     var player = document.querySelector('div.html5-video-player');
+
     var pageDomain = window.location.origin;
+    if (pageDomain == 'null') pageDomain = window.location.href;
+
     var PlayerStates = {
         unstarted: -1,
         ended: 0,

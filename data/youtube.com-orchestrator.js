@@ -22,6 +22,8 @@ MediaKeys.Init = function()
         clearInterval(intervalId);
 
         var pageDomain = window.location.origin;
+        if (pageDomain == 'null') pageDomain = window.location.href;
+
         var pageScript = document.createElement('script');
 
         var attachPageScript = function () {

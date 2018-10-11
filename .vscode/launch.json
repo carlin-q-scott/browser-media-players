@@ -7,11 +7,14 @@
             "request": "launch",
             "reAttach": true,
             "reloadOnChange": {
-                "watch": "${workspaceFolder}/**/*.js",
+                "watch": "${workspaceFolder}/**/*.{js,json,html}",
                 "ignore": "**/node_modules/**"
             },
+            "reloadOnAttach": true,
             "addonType": "webExtension",
-            "addonPath": "${workspaceFolder}"
+            "addonPath": "${workspaceFolder}",
+            "url": "file://${workspaceFolder}/tests/pandora.com.html",
+            "webRoot": "${workspaceFolder}"
         },
         {
             "name": "Attach to Firefox",
