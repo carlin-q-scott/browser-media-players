@@ -14,7 +14,9 @@ MediaKeys.init = function() {
         unstarted: -1,
         ended: 0,
         playing: 1,
-        paused: 2
+        paused: 2,
+        buffering: 3,
+        queued: 5
     };
     var playVideo = function () {
         player.playVideo();
@@ -64,7 +66,7 @@ MediaKeys.init = function() {
 
     //automatically pause other players while playing a video and resume them when done
     var latestState;
-    window.setInterval(function () {
+    function handlePlayerStateChanges() {
         var state = player.getPlayerState();
         if (state != latestState) {
             console.log(`youtube player state transitioned from ${latestState} to ${state}`);
@@ -82,7 +84,10 @@ MediaKeys.init = function() {
                     break;
             }
         }
-    }, 1500);
+    }
+
+    let interval = window.setInterval(handlePlayerStateChanges, 1500);
+    // window.addEventListener('beforeunload', () => window.clearInterval(interval))
 };
 
 MediaKeys.init();
