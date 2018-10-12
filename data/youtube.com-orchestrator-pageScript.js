@@ -87,7 +87,7 @@ MediaKeys.init = function() {
     }
 
     let interval = window.setInterval(handlePlayerStateChanges, 1500);
-    // window.addEventListener('beforeunload', () => window.clearInterval(interval))
+    window.addEventListener('beforeunload', () => window.clearInterval(interval))
 };
 
 MediaKeys.init();

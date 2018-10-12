@@ -8,6 +8,20 @@ MediaKeys.Init = function()
 {
     var pageDomain = window.location.origin;
     if (pageDomain == 'null') pageDomain = window.location.href;
+
+    function attachToVideoPlayerLater() {
+        // watch for navigation events
+        let observer = new MutationObserver(function() {
+            if (document.querySelector('div.html5-video-player')){
+                observer.disconnect();
+                attemptToAttachPageScript();
+            }
+        });
+        var config = {
+            childList: true
+        };
+        observer.observe(document.body, config);
+    }
             
     function removePageScript() {
         var pageScript = document.querySelector('script#media-keys');
@@ -69,12 +83,13 @@ MediaKeys.Init = function()
         var checkForPlayerInteval = 250;
 
         function reAttemptToAttachPageScript() {
-            console.log(`attempting to find youtube player. ${maxPlayerLoadTime} millis remaining...`)
+            // console.log(`attempting to find youtube player on ${window.location.href}. ${maxPlayerLoadTime} millis remaining...`)
             maxPlayerLoadTime -= checkForPlayerInteval;
             if (maxPlayerLoadTime == 0) {
                 // console.warn('didn\'t find youtube player');
                 clearInterval(intervalId);
                 // self.port.emit('self-destruct');
+                attachToVideoPlayerLater();
                 return;
             }
             if (!document.querySelector('div.html5-video-player')) return; //because there's no youtube player
@@ -92,7 +107,6 @@ MediaKeys.Init = function()
 
     attemptToAttachPageScript();
     setupCommunicationChannel();
-    window.addEventListener('load', () => attemptToAttachPageScript());
 };
 
 MediaKeys.Init();
