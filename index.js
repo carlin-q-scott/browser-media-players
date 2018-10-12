@@ -22,5 +22,5 @@ browser.storage.onChanged.addListener(onPrefChange);
 
 new ContentScriptOptions().activate();
 
-if (!window.matchMedia('-webkit-min-device-pixel-ratio:0').matches)   // Firefox
+if (!window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches)   // Firefox
     new CommandOptions().activate();
