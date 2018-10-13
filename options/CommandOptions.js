@@ -39,7 +39,6 @@ class CommandOptions extends Options {
      *  @param {object} options for command bindings
      */
     static activate(options) {
-        if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) return;
         if (!options) throw new Error('options are required');
 
         Object.keys(options).forEach(comm => {

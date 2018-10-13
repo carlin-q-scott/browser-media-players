@@ -1,13 +1,18 @@
 import CommandOptions from './CommandOptions.js';
 import UserOptions from './UserOptions.js';
 import ContentScriptOptions from './ContentScriptOptions.js';
+import isFirefoxPromise from '../lib/isFirefoxPromise.js'
 
 let commandOptions = new CommandOptions();
 let userOptions = new UserOptions();
 let contentScriptOptions = new ContentScriptOptions();
 
 document.addEventListener('DOMContentLoaded', () => {
-    commandOptions.updatePage();
+    isFirefoxPromise.then(isFirefox => {
+        if (isFirefox) commandOptions.updatePage();
+        else document.querySelector('div#commandsDiv').setAttribute('style', 'display: none;')
+    });
+
     userOptions.updatePage();
     contentScriptOptions.updatePage();
 });
