@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="extension.css">
     <style>
         label { width: 12ch; }
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
-            div#commandsDiv { display: none}
-        }
     </style>
 </head>
 <body>
@@ -22,22 +19,23 @@
             <div class="panel-section panel-section-formElements">
                 <div class="panel-formElements-item">
                     <label class="browser-style" for="MediaPlayPause">Play/Pause:</label>
-                    <input type="text" id="MediaPlayPause" />
+                    <input type="text" id="MediaPlayPause" placeholder="MediaPlayPause" />
                 </div>
                 <div class="panel-formElements-item">
                     <label class="browser-style" for="MediaNextTrack">Next Track:</label>
-                    <input type="text" id="MediaNextTrack" />
+                    <input type="text" id="MediaNextTrack" placeholder="MediaNextTrack" />
                 </div>
                 <div class="panel-formElements-item">
                     <label class="browser-style" for="MediaPrevTrack">Previous Track:</label>
-                    <input type="text" id="MediaPrevTrack" />
+                    <input type="text" id="MediaPrevTrack" placeholder="MediaPrevTrack" />
                 </div>
                 <div class="panel-formElements-item">
                     <label class="browser-style" for="MediaStop">Stop:</label>
-                    <input type="text" id="MediaStop" />
+                    <input type="text" id="MediaStop" placeholder="MediaStop" />
                 </div>
                 <div class="panel-formElements-item">
                     <button type="submit" class="browser-style">Save</button>
+                    <button type="reset" class="browser-style" title="Reset fields; click 'Save' to apply the reset.">Reset</button>
                 </div>
             </div>
         </form>

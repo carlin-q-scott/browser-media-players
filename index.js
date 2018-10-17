@@ -2,6 +2,8 @@ import hotkeyManager from './lib/hotkeyManager.js';
 import pageWorkerManager from './lib/pageWorkerManager.js';
 import CommandOptions from './options/CommandOptions.js';
 import ContentScriptOptions from './options/ContentScriptOptions.js';
+import isFirefoxPromise from '../lib/isFirefoxPromise.js'
+
 
 pageWorkerManager.Init();
 
@@ -22,5 +24,6 @@ browser.storage.onChanged.addListener(onPrefChange);
 
 new ContentScriptOptions().activate();
 
-if (!window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches)   // Firefox
-    new CommandOptions().activate();
+isFirefoxPromise.then(isFirefox => {
+    if (isFirefox) new CommandOptions().activate();
+});

@@ -26,10 +26,10 @@ class CommandOptions extends Options {
         super(
             'commands',
             {
-                MediaPlayPause: 'MediaPlayPause',
-                MediaNextTrack: 'MediaNextTrack',
-                MediaPrevTrack: 'MediaPrevTrack',
-                MediaStop: 'MediaStop'
+                MediaPlayPause: '',
+                MediaNextTrack: '',
+                MediaPrevTrack: '',
+                MediaStop: ''
             },
             'local'
         );
@@ -39,7 +39,6 @@ class CommandOptions extends Options {
      *  @param {object} options for command bindings
      */
     static activate(options) {
-        if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) return;
         if (!options) throw new Error('options are required');
 
         Object.keys(options).forEach(comm => {
