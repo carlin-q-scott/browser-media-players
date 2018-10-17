@@ -1,5 +1,4 @@
 {
-    "$schema": "http://json.schemastore.org/webextension",
     "manifest_version": 2,
     "short_name": "Media Keys",
     "name": "browser-media-keys",
