@@ -23,7 +23,7 @@
   "scripts": {
     "postinstall": "cpx node_modules/webextension-polyfill/dist/browser-polyfill.min.* lib",
     "lint": "web-ext lint",
-    "firefox": "web-ext run --verbose",
+    "firefox": "web-ext run --verbose --pref=javascript.options.strict=false",
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
     "youtube": "web-ext run --url https://www.youtube.com/watch?v=hKitZEncwro --pref=javascript.options.strict=false --browser-console",
     "spotify": "web-ext run --url https://open.spotify.com --browser-console",
