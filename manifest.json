@@ -10,7 +10,7 @@
         "64": "icon64.png",
         "128": "icon128.png"
     },
-    "applications": {
+    "__firefox__applications": {
         "gecko": {
             "id": "jid1-4GP7z3tkUd3Tzg@jetpack"
         }
@@ -24,28 +24,28 @@
             "suggested_key": {
                 "default": "MediaPlayPause"
             },
-            "global": true
+            "__chrome|opera__global": true
         },
         "MediaNextTrack": {
             "description": "plays the next track for the last active media website",
             "suggested_key": {
                 "default": "MediaNextTrack"
             },
-            "global": true
+            "__chrome|opera__global": true
         },
         "MediaPrevTrack": {
             "description": "plays the previous track for the last active media website",
             "suggested_key": {
                 "default": "MediaPrevTrack"
             },
-            "global": true
+            "__chrome|opera__global": true
         },
         "MediaStop": {
             "description": "stops playback of the last active media website",
             "suggested_key": {
                 "default": "MediaStop"
             },
-            "global": true
+            "__chrome|opera__global": true
         }
     },
     "options_ui": {
