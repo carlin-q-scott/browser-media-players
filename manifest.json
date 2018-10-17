@@ -12,7 +12,8 @@
     },
     "applications": {
         "gecko": {
-            "id": "jid1-4GP7z3tkUd3Tzg@jetpack"
+            "id": "jid1-4GP7z3tkUd3Tzg@jetpack",
+            "strict_min_version": "57.0"
         }
     },
     "background": {
