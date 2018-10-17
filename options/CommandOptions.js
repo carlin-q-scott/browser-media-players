@@ -26,10 +26,10 @@ class CommandOptions extends Options {
         super(
             'commands',
             {
-                MediaPlayPause: 'MediaPlayPause',
-                MediaNextTrack: 'MediaNextTrack',
-                MediaPrevTrack: 'MediaPrevTrack',
-                MediaStop: 'MediaStop'
+                MediaPlayPause: '',
+                MediaNextTrack: '',
+                MediaPrevTrack: '',
+                MediaStop: ''
             },
             'local'
         );
