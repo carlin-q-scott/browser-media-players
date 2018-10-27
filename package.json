@@ -17,11 +17,12 @@
   "devDependencies": {
     "cpx": "^1.5.0",
     "eslint": "^3.6.1",
+    "process-nextick-args": "^2.0.0",
     "web-ext": "^1.10.1",
     "webextension-polyfill": "^0.3.1"
   },
   "scripts": {
-    "postinstall": "cpx node_modules/webextension-polyfill/dist/browser-polyfill.min.* lib",
+    "postinstall": "cpx 'node_modules/webextension-polyfill/dist/browser-polyfill.min.*' 'lib'",
     "lint": "web-ext lint",
     "firefox": "web-ext run --verbose --pref=javascript.options.strict=false",
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
