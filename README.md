@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_apis/build/status/browser-media-players)](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_build/latest?definitionId=1) |
+[![Build Status](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_apis/build/status/browser-media-players)](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_build/latest?definitionId=1)
 
 
 Description
