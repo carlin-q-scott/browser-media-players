@@ -1,9 +1,4 @@
-Build Status
-============
-
-| Linux | Windows |
-|-------|---------|
-| [![Linux Build Status](https://travis-ci.org/carlin-q-scott/browser-media-keys.svg?branch=master)](https://travis-ci.org/carlin-q-scott/browser-media-keys) | [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/carlin-q-scott/browser-media-keys)](https://ci.appveyor.com/project/carlin-q-scott/browser-media-keys) |
+[![Build Status](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_apis/build/status/browser-media-players)](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_build/latest?definitionId=1) |
 
 
 Description
@@ -41,11 +36,9 @@ Packing
 Always start with Firefox, because it knows better than the other packers of what is included in the webextension.
 
 ### Firefox
-The npm build script will generate a zip file that's ready for uploading to Firefox after removing some files.
+The npm build script will generate a zip file that's ready for uploading to Firefox.
 
 `npm run build`
-
-The file path will be output in the console. Open it and remove the following files: jsconfig.json, package-lock.json, package.json, tests (folder), data/pageMods.json.
 
 ### Opera
 1. Extract the zip file created for Firefox to a folder
