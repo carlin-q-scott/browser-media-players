@@ -12,6 +12,13 @@ Supported Sites: youtube, pandora, spotify, bandcamp, google play, yandex, sound
 
 Please find us on GitHub if you'd like to request features, post issues or contribute to the project.
 
+
+Releases
+========
+[Firefox](https://addons.mozilla.org/en-US/firefox/addon/media-keys/)
+[Opera/Chrome](https://github.com/carlin-q-scott/browser-media-players/releases/latest) - Still awaiting store approval but you can install using the crx file.
+
+
 Development Environment
 =======================
 
