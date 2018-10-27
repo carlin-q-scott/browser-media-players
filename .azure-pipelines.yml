@@ -18,3 +18,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(System.DefaultWorkingDirectory)/web-ext-artifacts'
+
+name: 2.1.3.$(Rev:.r)
