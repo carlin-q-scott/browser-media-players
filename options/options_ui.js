@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     contentScriptOptions.updatePage();
 });
 document.addEventListener('keydown', commandOptions.handleKeyDown);
+document.addEventListener('keyup', commandOptions.handleKeyUp);
+document.addEventListener('reset', commandOptions.handleReset);
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {
         case 'commands':
