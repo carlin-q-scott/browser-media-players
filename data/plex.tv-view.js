@@ -1,10 +1,10 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-var baseXpath = "//div[contains(@class, 'player') and contains(@class, 'mini-player') and contains (@class, 'music')]";
-MediaKeys.playButton = baseXpath + "//button[contains(@class, 'play-btn') and not(contains(@class, 'hidden'))]";
-MediaKeys.pauseButton = baseXpath + "//button[contains(@class, 'pause-btn') and not(contains(@class, 'hidden'))]";
-MediaKeys.skipButton = baseXpath + "//button[contains(@class, 'next-btn')]";
-MediaKeys.previousButton = baseXpath + "//button[contains(@class, 'previous-btn')]";
+var baseXpath = '//div[@data-qa-id=\'playerControlsContainer\']';
+MediaKeys.playButton = baseXpath + '/.//button[@data-qa-id=\'resumeButton\']';
+MediaKeys.pauseButton = baseXpath + '/.//button[@data-qa-id=\'pauseButton\']';
+MediaKeys.skipButton = baseXpath + '/.//button[@data-qa-id=\'nextButton\']';
+MediaKeys.previousButton = baseXpath + '/.//button[@data-qa-id=\'previousButton\']';
