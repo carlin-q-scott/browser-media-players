@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "short_name": "Media Keys",
-    "name": "browser-media-keys",
+    "name": "Media Keys",
     "version": "2.1.4",
     "author": "Carlin Scott",
     "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
