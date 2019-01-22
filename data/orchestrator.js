@@ -5,47 +5,61 @@
  * See https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
 MediaKeys.Init = function () {
+    const mouseClickEvents = ['mousedown', 'click', 'mouseup'];
+    function simulateMouseClick(element){
+        mouseClickEvents.forEach(mouseEventType =>
+            element.dispatchEvent(
+                new MouseEvent(mouseEventType, {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true,
+                    buttons: 1
+                })
+            )
+        );
+    }
+
     function MediaPlay() {
         var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
         if (playButton == null) return;
-        playButton.click();
+        simulateMouseClick(playButton);
     }
 
     function MediaPause() {
         var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer)
         if (pauseButton != null) {
-            pauseButton.click();
+            simulateMouseClick(pauseButton);
         }
     }
 
     function MediaPlayPause() {
         var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
         if (playButton != null) {
-            playButton.click();
+            simulateMouseClick(playButton);
         }
         else {
             var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
             if (pauseButton == null) return;
-            pauseButton.click();
+            simulateMouseClick(pauseButton);
         }
     }
 
     function MediaNextTrack() {
         var skipButton = MediaKeys.GetSingleElementByXpath(MediaKeys.skipButton, MediaKeys.basePlayer);
         if (skipButton == null) return;
-        skipButton.click();
+        simulateMouseClick(skipButton);
     }
 
     function MediaPrevTrack() {
         var previousButton = MediaKeys.GetSingleElementByXpath(MediaKeys.previousButton, MediaKeys.basePlayer);
         if (previousButton == null) return;
-        previousButton.click();
+        simulateMouseClick(previousButton);
     }
 
     function MediaStop() {
         var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
         if (pauseButton == null) return;
-        pauseButton.click();
+        simulateMouseClick(pauseButton);
     }
 	
     function setupTrackInfoUpdates() {
