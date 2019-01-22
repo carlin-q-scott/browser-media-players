@@ -165,6 +165,17 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/stitcher.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://app.stitcher.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/music.yandex.ru-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
