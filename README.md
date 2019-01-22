@@ -18,12 +18,14 @@ Releases
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/media-keys/)
 [Opera/Chrome](https://github.com/carlin-q-scott/browser-media-players/releases/latest) - Still awaiting store approval but you can install using the crx file.
 
+
 Requesting New Sites
 ====================
 If you'd like support for a multimedia website to be added, please create an issue with the following information:
 1. Link to the website
 2. Name of the website
 3. Player control element html; see below on how to capture that.
+
 
 Capturing player control elements
 ---------------------------------
@@ -40,12 +42,30 @@ Capturing player control elements
 5. Paste that HTML into the new issue description
 6. Repeat these steps for the following buttons: Play, Next/Skip, Back/Previous.
 
+`Note: If you cannot inspect the player controls, then player is a custom page element and you will have to figure out the Application Programming Interface (API) for the element in order to add support for it. The Youtube player is such an element so you can use the code for that as an example of how to do this. Fortunately the youtube player has really good documentation but the player you are attempting to add may not.`
+
+Adding the site yourself
+------------------------
+Most sites have standard html elements for player controls. If you were able to follow the instructions in the previous section then the process for adding support is fairly painless:
+
+1. The `data` folder contains -view.js scripts for each website that has standard html player control elements.
+2. Copy one of -view.js scripts for another site you're familiar with, and rename it to match the new site.
+3. Review the html you extracted earlier and look for an html attribute that seems unique to the element and hopefully one that clearly identifies it.  
+   For instance, `<button qa-id="play-button" class="player-control-button play-button"/>` has `qa-id="play-button"`.
+4. Replace the xpath for each element using what you learned from reviewing each elements html.  
+    eg. `'//button[@qa-id="play-button"]'`
+5. Sometimes there are multiple player controls on a page. If that's the case, then there's an optional xpath variable you need to define. This variable will tell the add-on where to focus when looking for the individual player controls. This variable is `MediaKeys.basePlayer`.
+6. Now that you've created the view script, you will need to update the add-on manifest.json to include the website. So open it in the base directory.
+7. Look for the content_scripts section which should be organized alphabetically by multimedia website.
+8. Find the section for the website you used as your starting point and copy it.
+9. Paste the copied section into the appropriate spot to maintain alphabetical ordering.
+10. Rename the lines that are specific to the old site.
+11. Time to [test](#testing)!
+
 Development Environment
 =======================
 
 This add-on utilizes ``web-ex`` for building the extension and the ``Debugger for Firefox/Chrome`` Visual Studio Code extensions for debugging.  `npm install` will set up web-ex for you provided you use the npm scripts included in package.json or have ./node_modules/.bin in your PATH.
-
-More details about jpm can be found at https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm.
 
 
 Testing
