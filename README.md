@@ -18,6 +18,27 @@ Releases
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/media-keys/)
 [Opera/Chrome](https://github.com/carlin-q-scott/browser-media-players/releases/latest) - Still awaiting store approval but you can install using the crx file.
 
+Requesting New Sites
+====================
+If you'd like support for a multimedia website to be added, please create an issue with the following information:
+1. Link to the website
+2. Name of the website
+3. Player control element html; see below on how to capture that.
+
+Capturing player control elements
+---------------------------------
+1. Navigate to the multimedia website you'd like added.
+2. Start playing something on the site
+3. Inspect the pause button  
+   ![Inspect Element](docs/img/Inspect_Element.png)
+   1. Right-Click on the button
+   2. Click "Inspect Element"
+4. Copy the outer HTML of the element  
+   ![Copy Outer HTML](docs/img/Extract_Element.png)
+   1. Right-Click on the highlighted text in the Inspector panel
+   2. Click "Copy > Outer HTML"
+5. Paste that HTML into the new issue description
+6. Repeat these steps for the following buttons: Play, Next/Skip, Back/Previous.
 
 Development Environment
 =======================

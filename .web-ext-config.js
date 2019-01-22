@@ -4,6 +4,7 @@ module.exports = {
         "package-lock.json",
         "package.json",
         "tests/*",
-        "data/pageMods.json"
+        "data/pageMods.json",
+        "docs/*"
     ]
 }
