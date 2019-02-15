@@ -3,7 +3,7 @@
  */
 if (typeof MediaKeys == "undefined") var MediaKeys = {};
 
-MediaKeys.playButton = "//button[@class='control control-play']";
-MediaKeys.pauseButton = "//button[@class='control control-pause']";
-MediaKeys.skipButton = "//button[@class='control control-next']";
-MediaKeys.previousButton = "//button[@class='control control-prev']";
+MediaKeys.playButton = "//button/*[contains(@class,'icon-play')]";
+MediaKeys.pauseButton = "//button/*[contains(@class,'icon-pause')]";
+MediaKeys.skipButton = "//button/*[contains(@class,'icon-next')]";
+MediaKeys.previousButton = "//button/*[contains(@class,'icon-prev')]";
