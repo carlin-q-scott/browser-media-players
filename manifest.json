@@ -264,6 +264,17 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/jango.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.jango.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/koel-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
