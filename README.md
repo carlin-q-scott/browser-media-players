@@ -6,7 +6,7 @@ Description
 
 Lets you control various media sites using the media keys on your keyboard.
 
-Your media keys should work without the browser window active for Chrome and Opera. Firefox only supports the play/pause key and only if the browser window is active. You can however change the key assignments for this extension, to any key combination that you'd like, by using the shortcuts manager for the browser.
+Your media keys should work without the browser window active for Chrome and Opera. Firefox only [supports the play/pause key](https://bugzilla.mozilla.org/show_bug.cgi?id=1251795#c13) and only if the [browser window is active](https://bugzilla.mozilla.org/show_bug.cgi?id=1411795). You can however change the key assignments for this extension, to any key combination that you'd like, by using the shortcuts manager for the browser.
 
 Supported Sites: youtube, pandora, spotify, bandcamp, google play, yandex, soundcloud, tidal, deezer, plex, vk, subsonic, jamstash, jango, overcast.fm, music.amazon.co.uk, music.amazon.com, di.fm, netflix.com, and tunein.com.
 
