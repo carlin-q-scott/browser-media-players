@@ -5,7 +5,8 @@ class UserOptions extends Options {
         super(
             'preferences',
             {
-                autoplay: false
+                autoplay: false,
+                activeTab: false
             },
             'sync'
         )
