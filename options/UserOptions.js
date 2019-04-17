@@ -5,11 +5,13 @@ class UserOptions extends Options {
         super(
             'preferences',
             {
-                autoplay: false
+                autoplay: false,
+                activeTab: false
             },
             'sync'
         )
     }
 }
 
-export default UserOptions;
+const instance = new UserOptions();
+export default instance;
