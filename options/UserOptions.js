@@ -13,4 +13,5 @@ class UserOptions extends Options {
     }
 }
 
-export default UserOptions;
+const instance = new UserOptions();
+export default instance;
