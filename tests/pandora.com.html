@@ -5,7 +5,7 @@
 	<title>Pandora</title>
 </head>
 <body>
-<h1 id='status'>Play</h1>
+<h1 id='status'>Playing</h1>
 <div class='playButton' style='display: none;' onclick='play()'>Play</div>
 <div class='pauseButton' style='' onclick='pause()'>Pause</div>
 <div class='skipButton' onclick='skipTrack()'>Skip</div>
@@ -17,19 +17,19 @@ function play()
 {
 	pauseButton.style = "";
 	playButton.style = "display: none";
-	document.getElementById("status").innerHTML = "Play";
+	document.getElementById("status").innerHTML = "Playing";
 }
 
 function pause()
 {
 	playButton.style = "";
 	pauseButton.style = "display: none";
-	document.getElementById("status").innerHTML = "Pause";
+	document.getElementById("status").innerHTML = "Paused";
 }
 
 function skipTrack()
 {
-	document.getElementById("status").innerHTML = "Next";
+	document.getElementById("status").innerHTML = "Track Skipped";
 }	
 </script>
 </body>
