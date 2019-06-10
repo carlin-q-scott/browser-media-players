@@ -343,6 +343,17 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/hulu.com-view.js",
+                "data/Finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.hulu.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/hypem.com-view.js",
                 "data/Finder.js",
                 "data/orchestrator.js"
