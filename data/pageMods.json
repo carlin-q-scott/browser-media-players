@@ -97,6 +97,10 @@
     "include": "*.mixcloud.com"
   },
   {
+    "name": "hulu.com",
+    "include": "*.hulu.com"
+  },
+  {
     "name": "hypem.com",
     "include": "*.hypem.com"
   },
