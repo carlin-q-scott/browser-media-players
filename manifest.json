@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "short_name": "Media Keys",
     "name": "Media Keys",
-    "version": "2.2.0",
+    "version": "2.2.4",
     "author": "Carlin Scott",
     "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
     "description": "Lets you control many popular website media players using media key events",
@@ -64,8 +64,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.youtube.com/*",
-                "file:///*/tests/youtube.com.html"
+                "*://*.youtube.com/*"
             ],
             "js": [
                 "lib/browser-polyfill.min.js",
@@ -81,8 +80,7 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.pandora.com/*",
-                "file:///*/tests/pandora.com.html"
+                "*://*.pandora.com/*"
             ]
         },
         {
