@@ -87,7 +87,7 @@ class ContentScriptOptions extends Options {
                     if (approved)
                         browser.storage[this.storageLocation].set(this.forStorage());
                     else
-                        prompt('you need to approve access to the domain you specified');
+                        alert('you need to approve access to the domain you specified');
                 });
             }
         });
