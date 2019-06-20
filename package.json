@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "cpx": "^1.5.0",
-    "eslint": "^3.6.1",
+    "eslint": "^4.18.2",
     "process-nextick-args": "^2.0.0",
     "web-ext": "^3.0.0",
     "webextension-polyfill": "^0.3.1"
@@ -31,7 +31,7 @@
     "debug": "web-ext run --browser-console",
     "build": "web-ext build --overwrite-dest --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
     "deploy": "web-ext sign --channel=listed --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
-    "deploy-unlisted" : "web-ext sign --channel=unlisted --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
+    "deploy-unlisted": "web-ext sign --channel=unlisted --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
     "help": "web-ext --help"
   }
 }
