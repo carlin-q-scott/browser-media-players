@@ -64,7 +64,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.youtube.com/*",
+                "*://*.youtube.com/*"
                 //"file:///*/tests/youtube.com.html"
             ],
             "js": [
@@ -81,7 +81,7 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.pandora.com/*",
+                "*://*.pandora.com/*"
                 //"file:///*/tests/pandora.com.html"
             ]
         },
@@ -413,7 +413,7 @@
                 "data/Finder.js",
                 "data/orchestrator.js"
             ],
-            "matches": [ 
+            "matches": [
               "*://*.udemy.com/*"
             ]
         }
