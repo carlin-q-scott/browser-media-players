@@ -19,9 +19,5 @@ steps:
   inputs:
     ArtifactName: Web-Extension
     pathToPublish: '$(System.DefaultWorkingDirectory)/web-ext-artifacts'
-- task: PublishBuildArtifacts@1
-  inputs:
-    ArtifactName: Publish-Scripts
-    pathToPublish: '$(System.DefaultWorkingDirectory)/deploy'
 
 name: 2.1.4$(Rev:.r)
