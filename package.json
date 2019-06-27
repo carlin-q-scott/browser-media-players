@@ -29,9 +29,9 @@
     "youtube": "web-ext run --url https://www.youtube.com/watch?v=hKitZEncwro --pref=javascript.options.strict=false --browser-console",
     "spotify": "web-ext run --url https://open.spotify.com --browser-console",
     "debug": "web-ext run --browser-console",
-    "build": "web-ext build --overwrite-dest --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
-    "deploy": "web-ext sign --channel=listed --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
-    "deploy-unlisted": "web-ext sign --channel=unlisted --ignore-files tests deploy docs data/pageMods.json icon425.png package* jsconfig.json",
+    "build": "web-ext build",
+    "deploy": "web-ext sign --channel=listed",
+    "deploy-unlisted": "web-ext sign --channel=unlisted",
     "help": "web-ext --help"
   }
 }
