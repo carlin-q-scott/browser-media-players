@@ -65,7 +65,7 @@
         {
             "matches": [
                 "*://*.youtube.com/*"
-                //"file:///*/tests/youtube.com.html"
+                //,"file:///*/tests/youtube.com.html"
             ],
             "js": [
                 "lib/browser-polyfill.min.js",
@@ -82,7 +82,7 @@
             ],
             "matches": [
                 "*://*.pandora.com/*"
-                //"file:///*/tests/pandora.com.html"
+                //,"file:///*/tests/pandora.com.html"
             ]
         },
         {
