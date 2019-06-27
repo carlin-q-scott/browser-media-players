@@ -33,5 +33,21 @@
     "deploy": "web-ext sign --channel=listed",
     "deploy-unlisted": "web-ext sign --channel=unlisted",
     "help": "web-ext --help"
+  },
+  "webExt": {
+    "ignoreFiles": [
+        "jsconfig.json",
+        "package-lock.json",
+        "package.json",
+        "tests",
+        "data/pageMods.json",
+        "docs",
+        "icon425.png",
+        "web-ext-config.js",
+        "web-ext-artifacts"
+    ],
+    "build": {
+        "overwriteDest": true
+    }
   }
 }
