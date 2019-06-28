@@ -54,7 +54,7 @@ Most sites have standard html elements for player controls. If you were able to 
    For instance, `<button qa-id="play-button" class="player-control-button play-button"/>` has `qa-id="play-button"`.
 4. Replace the xpath for each element using what you learned from reviewing each elements html.  
     eg. `'//button[@qa-id="play-button"]'`
-5. Sometimes there are multiple player controls on a page. If that's the case, then there's an optional xpath variable you need to define. This variable will tell the add-on where to focus when looking for the individual player controls. This variable is `MediaKeys.basePlayer`.
+5. Sometimes the player controls are contained inside of an iframe. If that's the case, then you need to provide an xpath for locating the iframe using the optional variable `MediaKeys.basePlayer`.
 6. Now that you've created the view script, you will need to update the add-on manifest.json to include the website. So open it in the base directory.
 7. Look for the content_scripts section which should be organized alphabetically by multimedia website.
 8. Find the section for the website you used as your starting point and copy it.
