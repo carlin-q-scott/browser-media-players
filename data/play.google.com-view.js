@@ -3,6 +3,7 @@
  */
 if (typeof MediaKeys == "undefined") var MediaKeys = {};
 
+MediaKeys.useXpath = true;
 MediaKeys.playButton = "//*[@data-id='play-pause'][1]";
 MediaKeys.pauseButton = "//*[@data-id='play-pause'][1]";
 MediaKeys.skipButton = "//*[@data-id='forward'][1]";

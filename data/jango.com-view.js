@@ -3,7 +3,7 @@
  */
 if (typeof MediaKeys == "undefined") var MediaKeys = {};
 
-MediaKeys.playButton = "//a[@id='btn-playpause']/button";
-MediaKeys.pauseButton = "//a[@id='btn-playpause']/button";
-MediaKeys.skipButton = "//a[@id='btn-ff']/button";
-MediaKeys.previousButton = "//a[@id='btn-rewind']/button";
+MediaKeys.playButton = "a#btn-playpause/button";
+MediaKeys.pauseButton = "a#btn-playpause/button";
+MediaKeys.skipButton = "a#btn-ff/button";
+MediaKeys.previousButton = "a#btn-rewind/button";

@@ -24,5 +24,5 @@ function querySelector(elementLocator, documentLocator)
     return docElement.querySelector(elementLocator);
 }
 
-if (MediaKeys.useCssSelectors) MediaKeys.find = querySelector
-else MediaKeys.find = getSingleElementByXpath
+if (MediaKeys.useXpath) MediaKeys.find = getSingleElementByXpath
+else MediaKeys.find = querySelector

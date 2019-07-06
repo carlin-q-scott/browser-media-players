@@ -40,7 +40,6 @@
         "package-lock.json",
         "package.json",
         "tests",
-        "data/pageMods.json",
         "docs",
         "icon425.png",
         "web-ext-config.js",

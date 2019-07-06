@@ -3,6 +3,7 @@
  */
 if (typeof MediaKeys == "undefined") var MediaKeys = {};
 
+MediaKeys.useXpath = true;
 MediaKeys.playButton = "//*[@data-qa='play_button' or @class='playButton' and not(contains(@style,'none'))]";
 MediaKeys.pauseButton = "//*[@data-qa='pause_button' or @class='pauseButton' and not(contains(@style,'none'))]";
 MediaKeys.previousButton = "//*[@data-qa='replay_button' or @class='skipButton']";
