@@ -77,7 +77,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/pandora.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -89,7 +89,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/tidal.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -100,7 +100,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/bandcamp.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -111,7 +111,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/play.google.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -122,7 +122,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/play.spotify.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -133,7 +133,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/player.spotify.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -144,7 +144,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/open.spotify.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -155,7 +155,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/soundcloud.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -166,7 +166,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/stitcher.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -177,7 +177,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/music.yandex.ru-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -188,7 +188,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/vk.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -199,7 +199,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/radio.yandex.ru-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -210,7 +210,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/deezer.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -221,7 +221,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/overcast.fm-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -232,7 +232,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/plex.tv-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -243,7 +243,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/pluralsight.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -254,7 +254,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/jamstash-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -265,7 +265,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/jango.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -276,7 +276,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/koel-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -287,7 +287,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/subsonic-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -298,7 +298,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/madsonic-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -309,7 +309,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/music.amazon-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -322,7 +322,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/cbcmusic.ca-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -333,7 +333,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/mixcloud.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -344,7 +344,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/hulu.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -355,7 +355,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/hypem.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -366,7 +366,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/netflix.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -377,7 +377,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/tunein.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -388,7 +388,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/play.pocketcasts.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -399,7 +399,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/di.fm-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
@@ -410,7 +410,7 @@
             "js": [
                 "lib/browser-polyfill.min.js",
                 "data/udemy.com-view.js",
-                "data/Finder.js",
+                "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
