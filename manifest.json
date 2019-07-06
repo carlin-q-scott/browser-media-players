@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "short_name": "Media Keys",
     "name": "Media Keys",
-    "version": "2.2.6",
+    "version": "2.2.7",
     "author": "Carlin Scott",
     "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
     "description": "Lets you control many popular website media players using media key events",
@@ -270,6 +270,17 @@
             ],
             "matches": [
                 "*://*.jango.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
+                "data/kanopy-view.js",
+                "data/finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.kanopy.com/*"
             ]
         },
         {
