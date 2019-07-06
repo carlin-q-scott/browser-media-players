@@ -3,14 +3,26 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.GetSingleElementByXpath = function(path, docXPath)
+function getSingleElementByXpath(elementLocator, documentLocator)
 {
-	var docElement;
-	if (docXPath) docElement = MediaKeys.GetSingleElementByXpath(docXPath).contentDocument;
-	else docElement = document;
+    var docElement;
+    if (documentLocator) docElement = getSingleElementByXpath(documentLocator).contentDocument;
+    else docElement = document;
 
-	//console.log("looking for " + path + " on " + document.URL);
-	return docElement.evaluate(path, docElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-};
+    //console.log("looking for " + elementLocator + " on " + document.URL);
+    return docElement.evaluate(elementLocator, docElement, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+
+function querySelector(elementLocator, documentLocator)
+{
+    var docElement;
+    if (documentLocator) docElement = document.querySelector(documentLocator);
+    else docElement = document;
+
+    return docElement.querySelector(elementLocator);
+}
+
+if (MediaKeys.useCssSelectors) MediaKeys.find = querySelector
+else MediaKeys.find = getSingleElementByXpath

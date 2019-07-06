@@ -20,44 +20,44 @@ MediaKeys.Init = function () {
     }
 
     function MediaPlay() {
-        var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
+        var playButton = MediaKeys.find(MediaKeys.playButton, MediaKeys.basePlayer);
         if (playButton == null) return;
         simulateMouseClick(playButton);
     }
 
     function MediaPause() {
-        var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer)
+        var pauseButton = MediaKeys.find(MediaKeys.pauseButton, MediaKeys.basePlayer)
         if (pauseButton != null) {
             simulateMouseClick(pauseButton);
         }
     }
 
     function MediaPlayPause() {
-        var playButton = MediaKeys.GetSingleElementByXpath(MediaKeys.playButton, MediaKeys.basePlayer);
+        var playButton = MediaKeys.find(MediaKeys.playButton, MediaKeys.basePlayer);
         if (playButton != null) {
             simulateMouseClick(playButton);
         }
         else {
-            var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
+            var pauseButton = MediaKeys.find(MediaKeys.pauseButton, MediaKeys.basePlayer);
             if (pauseButton == null) return;
             simulateMouseClick(pauseButton);
         }
     }
 
     function MediaNextTrack() {
-        var skipButton = MediaKeys.GetSingleElementByXpath(MediaKeys.skipButton, MediaKeys.basePlayer);
+        var skipButton = MediaKeys.find(MediaKeys.skipButton, MediaKeys.basePlayer);
         if (skipButton == null) return;
         simulateMouseClick(skipButton);
     }
 
     function MediaPrevTrack() {
-        var previousButton = MediaKeys.GetSingleElementByXpath(MediaKeys.previousButton, MediaKeys.basePlayer);
+        var previousButton = MediaKeys.find(MediaKeys.previousButton, MediaKeys.basePlayer);
         if (previousButton == null) return;
         simulateMouseClick(previousButton);
     }
 
     function MediaStop() {
-        var pauseButton = MediaKeys.GetSingleElementByXpath(MediaKeys.pauseButton, MediaKeys.basePlayer);
+        var pauseButton = MediaKeys.find(MediaKeys.pauseButton, MediaKeys.basePlayer);
         if (pauseButton == null) return;
         simulateMouseClick(pauseButton);
     }
@@ -65,16 +65,16 @@ MediaKeys.Init = function () {
     function setupTrackInfoUpdates() {
         function notifyNewTrack() {
             new Notification('Now Playing', {
-                body: MediaKeys.GetSingleElementByXpath(MediaKeys.trackInfo, MediaKeys.basePlayer).innerText
+                body: MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer).innerText
             });
         }
 
         var currentTrackObservable;
 
         if (MediaKeys.trackInfoContainer)
-            currentTrackObservable = MediaKeys.GetSingleElementByXpath(MediaKeys.trackInfoContainer, MediaKeys.basePlayer);
+            currentTrackObservable = MediaKeys.find(MediaKeys.trackInfoContainer, MediaKeys.basePlayer);
         else
-			currentTrackObservable = MediaKeys.GetSingleElementByXpath(MediaKeys.trackInfo, MediaKeys.basePlayer);
+			currentTrackObservable = MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer);
 
         if (currentTrackObservable) {
             var currentTrackObserver = new MutationObserver(notifyNewTrack);
