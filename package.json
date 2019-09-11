@@ -15,6 +15,7 @@
     "url": "https://github.com/carlin-q-scott/browser-media-players/issues"
   },
   "devDependencies": {
+    "ajv": "^6.10.2",
     "cpx": "^1.5.0",
     "eslint": "^4.19.1",
     "process-nextick-args": "^2.0.1",
@@ -36,15 +37,15 @@
   },
   "webExt": {
     "ignoreFiles": [
-        "jsconfig.json",
-        "package-lock.json",
-        "package.json",
-        "tests",
-        "data/pageMods.json",
-        "docs",
-        "icon425.png",
-        "web-ext-config.js",
-        "web-ext-artifacts"
+      "jsconfig.json",
+      "package-lock.json",
+      "package.json",
+      "tests",
+      "data/pageMods.json",
+      "docs",
+      "icon425.png",
+      "web-ext-config.js",
+      "web-ext-artifacts"
     ],
     "build": {
       "overwriteDest": true
