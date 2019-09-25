@@ -104,7 +104,8 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.bandcamp.com/*"
+                "*://*.bandcamp.com/*",
+                "*://shop.attackthemusic.com/*"
             ]
         },
         {
