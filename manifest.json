@@ -10,10 +10,10 @@
         "64": "icon64.png",
         "128": "icon128.png"
     },
-    "applications": {
+    "browser_specific_settings": {
         "gecko": {
             "id": "jid1-4GP7z3tkUd3Tzg@jetpack",
-            "strict_min_version": "57.0"
+            "strict_min_version": "60.0"
         }
     },
     "background": {
