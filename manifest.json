@@ -170,7 +170,6 @@
             "all_frames": true,
             "js": [
                 "lib/browser-polyfill.min.js",
-                "https://w.soundcloud.com/player/api.js",
                 "data/w.soundcloud.com-orchestrator.js"
             ]
         },
