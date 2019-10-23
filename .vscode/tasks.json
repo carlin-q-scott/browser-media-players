@@ -7,7 +7,10 @@
             "group": "build",
             "label": "build",
             "type": "npm",
-            "script": "build"
+            "script": "build",
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
         }
     ]
 }
