@@ -99,6 +99,17 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/music.apple.com-view.js",
+                "data/finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.music.apple.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/bandcamp.com-view.js",
                 "data/finder.js",
                 "data/orchestrator.js"
