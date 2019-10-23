@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "short_name": "Media Keys",
     "name": "Media Keys",
-    "version": "2.2.7",
+    "version": "2.3.0",
     "author": "Carlin Scott",
     "homepage_url": "https://github.com/carlin-q-scott/browser-media-players",
     "description": "Lets you control many popular website media players using media key events",
@@ -10,10 +10,10 @@
         "64": "icon64.png",
         "128": "icon128.png"
     },
-    "applications": {
+    "browser_specific_settings": {
         "gecko": {
             "id": "jid1-4GP7z3tkUd3Tzg@jetpack",
-            "strict_min_version": "57.0"
+            "strict_min_version": "60.0"
         }
     },
     "background": {
@@ -99,12 +99,24 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/music.apple.com-view.js",
+                "data/finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.music.apple.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/bandcamp.com-view.js",
                 "data/finder.js",
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.bandcamp.com/*"
+                "*://*.bandcamp.com/*",
+                "*://shop.attackthemusic.com/*"
             ]
         },
         {
@@ -159,7 +171,17 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-                "*://*.soundcloud.com/*"
+                "*://soundcloud.com/*"
+            ]
+        },
+        {
+            "matches": [
+                "https://w.soundcloud.com/player/*"
+            ],
+            "all_frames": true,
+            "js": [
+                "lib/browser-polyfill.min.js",
+                "data/w.soundcloud.com-orchestrator.js"
             ]
         },
         {

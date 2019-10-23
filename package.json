@@ -15,11 +15,12 @@
     "url": "https://github.com/carlin-q-scott/browser-media-players/issues"
   },
   "devDependencies": {
+    "ajv": "^6.10.2",
     "cpx": "^1.5.0",
-    "eslint": "^4.19.1",
+    "eslint": "^6.5.1",
     "process-nextick-args": "^2.0.1",
-    "web-ext": "^3.1.0",
-    "webextension-polyfill": "^0.4.0"
+    "web-ext": "^3.2.0",
+    "webextension-polyfill": "^0.5.0"
   },
   "scripts": {
     "postinstall": "cpx 'node_modules/webextension-polyfill/dist/browser-polyfill.min.*' 'lib'",
@@ -28,6 +29,7 @@
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
     "youtube": "web-ext run --url https://www.youtube.com/watch?v=hKitZEncwro --pref=javascript.options.strict=false --browser-console",
     "spotify": "web-ext run --url https://open.spotify.com --browser-console",
+    "apple": "web-ext run --url https://beta.music.apple.com --browser-console",
     "debug": "web-ext run --browser-console",
     "build": "web-ext build",
     "deploy": "web-ext sign --channel=listed",
@@ -36,17 +38,18 @@
   },
   "webExt": {
     "ignoreFiles": [
-        "jsconfig.json",
-        "package-lock.json",
-        "package.json",
-        "tests",
-        "docs",
-        "icon425.png",
-        "web-ext-config.js",
-        "web-ext-artifacts"
+      "jsconfig.json",
+      "package-lock.json",
+      "package.json",
+      "tests",
+      "data/pageMods.json",
+      "docs",
+      "icon425.png",
+      "web-ext-config.js",
+      "web-ext-artifacts"
     ],
     "build": {
-        "overwriteDest": true
+      "overwriteDest": true
     }
   }
 }
