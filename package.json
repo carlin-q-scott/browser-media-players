@@ -29,6 +29,7 @@
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
     "youtube": "web-ext run --url https://www.youtube.com/watch?v=hKitZEncwro --pref=javascript.options.strict=false --browser-console",
     "spotify": "web-ext run --url https://open.spotify.com --browser-console",
+    "apple": "web-ext run --url https://beta.music.apple.com --browser-console",
     "debug": "web-ext run --browser-console",
     "build": "web-ext build",
     "deploy": "web-ext sign --channel=listed",
