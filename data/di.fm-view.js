@@ -2,8 +2,8 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-var baseXpath = "div.controls";
-MediaKeys.playButton = baseXpath + "//div";
-MediaKeys.playButton = baseXpath + "//div";
+var baseXpath = 'div.controls ';
+MediaKeys.playButton = baseXpath + 'a[class*="play"]';
+MediaKeys.pauseButton = baseXpath + 'a[class*="pause"]';

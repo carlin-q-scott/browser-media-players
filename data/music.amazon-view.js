@@ -1,12 +1,14 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "section.playbackControlsView//*[contains(@class, 'playerIconPlay')]";
-MediaKeys.pauseButton = "section.playbackControlsView//*[contains(@class, 'playerIconPause')]";
-MediaKeys.skipButton = "//*[contains(@class, 'nextButton')]";
-MediaKeys.previousButton = "//*[contains(@class, 'previousButton')]";
+let base = '.playbackControls '
+MediaKeys.playButton = base + '.playerIconPlay:not(.disabled)';
+MediaKeys.pauseButton = base + '.playerIconPause';
+MediaKeys.skipButton = base + '.nextButton';
+MediaKeys.previousButton = base + '.previousButton';
 
-//MediaKeys.trackInfoContainer = "//*[@class='playbackControlsView']"
-MediaKeys.trackInfo = "//*[@class='trackInfoContainer']";
+//MediaKeys.trackInfoContainer = ".playbackControlsView"
+MediaKeys.trackInfo = '.trackInfoContainer';
+MediaKeys.trackImage = '.trackAlbumArt img'

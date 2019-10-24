@@ -3,8 +3,7 @@
  */
 if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.useXpath = true;
-MediaKeys.playButton = '//button[@data-qa-id="resumeButton"]';
-MediaKeys.pauseButton = '//button[@data-qa-id="pauseButton"]';
-MediaKeys.skipButton = '//button[@data-qa-id="nextButton"]';
-MediaKeys.previousButton = '//button[@data-qa-id="previousButton"]';
+MediaKeys.playButton = 'button[data-qa-id="resumeButton"]';
+MediaKeys.pauseButton = 'button[data-qa-id="pauseButton"]';
+MediaKeys.skipButton = 'button[data-qa-id="nextButton"]';
+MediaKeys.previousButton = 'button[data-qa-id="previousButton"]';

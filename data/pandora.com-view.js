@@ -1,13 +1,13 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.useXpath = true;
-MediaKeys.playButton = "//*[@data-qa='play_button' or @class='playButton' and not(contains(@style,'none'))]";
-MediaKeys.pauseButton = "//*[@data-qa='pause_button' or @class='pauseButton' and not(contains(@style,'none'))]";
-MediaKeys.previousButton = "//*[@data-qa='replay_button' or @class='skipButton']";
-MediaKeys.skipButton = "//*[@data-qa='skip_button' or @class='skipButton']";
-MediaKeys.trackInfoContainer = "//*[contains(@data-reactid,'NowPlaying') or @id='trackInfoContainer']";
-MediaKeys.trackInfo = "//*[@class='nowPlayingTopInfo__current' or contains(@class,'trackData')]";
 MediaKeys.basePlayer = null;
+
+MediaKeys.playButton = 'button.PlayButton[data-qa="play_button"]';
+MediaKeys.pauseButton = 'button.PlayButton[data-qa="pause_button"]';
+MediaKeys.previousButton = 'button.ReplayButton';
+MediaKeys.skipButton = 'button.SkipButton';
+MediaKeys.trackInfo = 'div.Tuner__Audio__TrackDetail';
+MediaKeys.trackImage = MediaKeys.trackInfo + ' img';

@@ -2,8 +2,8 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
 MediaKeys.useXpath = true;
-MediaKeys.playButton = "//div[contains(@class,'playbutton') and not(contains(@style,'none'))]";
-MediaKeys.pauseButton = "//div[contains(@class,'playbutton') and not(contains(@style,'none'))]";
+MediaKeys.playButton = 'div.playbutton:not([style*="none"])';
+MediaKeys.pauseButton = 'div.playbutton:not([style*="none"])';
