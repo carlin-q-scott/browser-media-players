@@ -103,7 +103,7 @@ MediaKeys.Init = function () {
             var currentTrackObserver = new MutationObserver(notifyNewTrack);
             currentTrackObserver.observe(currentTrackObservable, {
                 childList: true,
-                characterData: false,
+                characterData: false, //TODO: this is needed for open.spotify notifications, but catches progress bar on pandora
                 subtree: true
             });
         }
