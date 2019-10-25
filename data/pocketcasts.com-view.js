@@ -3,5 +3,5 @@
  */
 if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = 'div.play_button:not(.playing)';
-MediaKeys.pauseButton = 'div.pause_button.playing';
+MediaKeys.playButton = 'div.play_pause_button.play_button';
+MediaKeys.pauseButton = 'div.play_pause_button.pause_button';

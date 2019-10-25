@@ -1,5 +1,5 @@
 if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = '#audio_player-play:not(.playing)';
-MediaKeys.pauseButton = '#audio_player-play.playing';
+MediaKeys.playButton = 'div:not(.playing) > div#player-container-wrapper a#audio_player-play';
+MediaKeys.pauseButton = 'div.playing > div#player-container-wrapper #audio_player-play';
 MediaKeys.skipButton = '#audio_player-skip';
