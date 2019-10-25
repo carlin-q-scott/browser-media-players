@@ -83,6 +83,7 @@ MediaKeys.Init = function () {
     async function setupTrackInfoUpdates() {
         let timeout;
         function notifyNewTrack() {
+            // console.log('clearing timeout ' + timeout);
             clearTimeout(timeout);
             timeout = setTimeout(() => {
                 new Notification('Now Playing', {
@@ -103,7 +104,7 @@ MediaKeys.Init = function () {
             var currentTrackObserver = new MutationObserver(notifyNewTrack);
             currentTrackObserver.observe(currentTrackObservable, {
                 childList: true,
-                characterData: false, //TODO: this is needed for open.spotify notifications, but catches progress bar on pandora
+                attributes: true,
                 subtree: true
             });
         }
