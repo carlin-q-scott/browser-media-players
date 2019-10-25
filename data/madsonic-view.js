@@ -4,11 +4,11 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.basePlayer = "//iframe[@id='playQueue']";
+MediaKeys.basePlayer = 'iframe#playQueue';
 
-MediaKeys.playButton = "//span[contains(@id, 'startButton') and not(contains(@style,'display: none'))]";
-MediaKeys.pauseButton = "//span[contains(@id, 'stopButton') and not(contains(@style,'display: none'))]";
-MediaKeys.skipButton = "//span[@id='nextButton']";
-MediaKeys.previousButton = "//span[@id='previousButton']";
+MediaKeys.playButton = 'span#startButton:not([style="display:none"])';
+MediaKeys.pauseButton = 'span#stopButton:not([style="display:none"])';
+MediaKeys.skipButton = 'span#nextButton';
+MediaKeys.previousButton = 'span#previousButton';

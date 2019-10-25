@@ -61,26 +61,50 @@ MediaKeys.Init = function () {
         if (pauseButton == null) return;
         simulateMouseClick(pauseButton);
     }
-	
-    function setupTrackInfoUpdates() {
+
+    async function waitUntilExists(func) {
+        let retriesLeft = 100;
+        return new Promise((resolve, reject) => {
+            let interval = setInterval(() => {
+                let result = func();
+                if (result) {
+                    clearInterval(interval);
+                    resolve(result);
+                }
+                else if (retriesLeft-- === 0)
+                {
+                    clearInterval(interval);
+                    reject('function failed to return a value within a reasonable amount of time');
+                }
+            }, 250);
+        });
+    }
+
+    async function setupTrackInfoUpdates() {
+        let timeout;
         function notifyNewTrack() {
-            new Notification('Now Playing', {
-                body: MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer).innerText
-            });
+            // console.log('clearing timeout ' + timeout);
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                new Notification('Now Playing', {
+                    body: MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer).innerText,
+                    icon: MediaKeys.getTrackImageUrl ? MediaKeys.getTrackImageUrl() : ''
+                });
+            }, 3000);
         }
 
         var currentTrackObservable;
 
         if (MediaKeys.trackInfoContainer)
-            currentTrackObservable = MediaKeys.find(MediaKeys.trackInfoContainer, MediaKeys.basePlayer);
+            currentTrackObservable = await waitUntilExists(() => MediaKeys.find(MediaKeys.trackInfoContainer, MediaKeys.basePlayer));
         else
-			currentTrackObservable = MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer);
+            currentTrackObservable = await waitUntilExists(() => MediaKeys.find(MediaKeys.trackInfo, MediaKeys.basePlayer));
 
         if (currentTrackObservable) {
             var currentTrackObserver = new MutationObserver(notifyNewTrack);
             currentTrackObserver.observe(currentTrackObservable, {
                 childList: true,
-                characterData: true,
+                attributes: true,
                 subtree: true
             });
         }
@@ -95,7 +119,7 @@ MediaKeys.Init = function () {
         let port = browser.runtime.connect(browser.runtime.id, {name: window.location.host});
 		
         port.onMessage.addListener(request => {
-			//console.log(`page script received ${request}`);
+            //console.log(`page script received ${request}`);
             switch (request) {
                 case 'MediaPlay':
                     MediaPlay();

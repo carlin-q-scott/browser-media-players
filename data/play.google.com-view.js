@@ -1,9 +1,9 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//*[@data-id='play-pause'][1]";
-MediaKeys.pauseButton = "//*[@data-id='play-pause'][1]";
-MediaKeys.skipButton = "//*[@data-id='forward'][1]";
-MediaKeys.previousButton = "//*[@data-id='rewind'][1]";
+MediaKeys.playButton = '#player-bar-play-pause';
+MediaKeys.pauseButton = '#player-bar-play-pause.playing';
+MediaKeys.skipButton = '#player-bar-forward';
+MediaKeys.previousButton = '#player-bar-rewind';

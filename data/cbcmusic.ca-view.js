@@ -1,9 +1,9 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//button[contains(@class,'playButton') and contains(@class, 'Play')]";
-MediaKeys.pauseButton = "//button[contains(@class,'playButton') and contains(@class, 'Pause')";
-MediaKeys.skipButton = "//a[contains(@class,'player-console-ui-nextButton')]";
-MediaKeys.previousButton = "//a[contains(@class,'player-console-ui-prevButton')]";
+MediaKeys.playButton = 'button.playButton.Play';
+MediaKeys.pauseButton = 'button.playButton.Pause';
+MediaKeys.skipButton = 'a.player-console-ui-nextButton';
+MediaKeys.previousButton = 'a.player-console-ui-prevButton';
