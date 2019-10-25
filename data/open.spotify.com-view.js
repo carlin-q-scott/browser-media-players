@@ -9,4 +9,7 @@ MediaKeys.skipButton = 'button[class*="spoticon-skip-forward-"]';
 MediaKeys.previousButton = 'button[class*="spoticon-skip-back-"]';
 
 MediaKeys.trackInfo = 'div.now-playing'
-MediaKeys.trackImage = ''
+{
+    let urlRegex = new RegExp('https://[/\\w\\.\\d]+');
+    MediaKeys.getTrackImageUrl = () => MediaKeys.find(MediaKeys.trackInfo + ' div.cover-art-image').style.backgroundImage.match(urlRegex)[0];
+}

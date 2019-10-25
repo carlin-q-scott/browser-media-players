@@ -9,6 +9,6 @@ MediaKeys.pauseButton = base + '.playerIconPause';
 MediaKeys.skipButton = base + '.nextButton';
 MediaKeys.previousButton = base + '.previousButton';
 
-//MediaKeys.trackInfoContainer = ".playbackControlsView"
+//MediaKeys.trackInfoContainer = '.playbackControlsView'
 MediaKeys.trackInfo = '.trackInfoContainer';
-MediaKeys.trackImage = '.trackAlbumArt img'
+MediaKeys.getTrackImageUrl = () => MediaKeys.find('.trackAlbumArt img').src

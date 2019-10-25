@@ -10,4 +10,4 @@ MediaKeys.pauseButton = 'button.PlayButton[data-qa="pause_button"]';
 MediaKeys.previousButton = 'button.ReplayButton';
 MediaKeys.skipButton = 'button.SkipButton';
 MediaKeys.trackInfo = 'div.Tuner__Audio__TrackDetail';
-MediaKeys.trackImage = MediaKeys.trackInfo + ' img';
+MediaKeys.getTrackImageUrl = () => MediaKeys.find(MediaKeys.trackInfo + ' img').src;
