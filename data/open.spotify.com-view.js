@@ -1,9 +1,15 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//button[contains(concat(' ', normalize-space(@class), ' '), ' spoticon-play-')]";
-MediaKeys.pauseButton = "//button[contains(concat(' ', normalize-space(@class), ' '), ' spoticon-pause-')]";
-MediaKeys.skipButton = "//button[contains(concat(' ', normalize-space(@class), ' '), ' spoticon-skip-forward-')]";
-MediaKeys.previousButton = "//button[contains(concat(' ', normalize-space(@class), ' '), ' spoticon-skip-back-')]";
+MediaKeys.playButton = 'button[class*="spoticon-play-"]';
+MediaKeys.pauseButton = 'button[class*="spoticon-pause-"]';
+MediaKeys.skipButton = 'button[class*="spoticon-skip-forward-"]';
+MediaKeys.previousButton = 'button[class*="spoticon-skip-back-"]';
+
+MediaKeys.trackInfo = 'div.now-playing'
+{
+    let urlRegex = new RegExp('https://[/\\w\\.\\d]+');
+    MediaKeys.getTrackImageUrl = () => MediaKeys.find(MediaKeys.trackInfo + ' div.cover-art-image').style.backgroundImage.match(urlRegex)[0];
+}

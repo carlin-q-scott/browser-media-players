@@ -11,7 +11,6 @@
                 "ignore": "**/node_modules/**"
             },
             "reloadOnAttach": true,
-            "addonType": "webExtension",
             "addonPath": "${workspaceFolder}",
             "url": "file://${workspaceFolder}/tests/pandora.com.html",
             "webRoot": "${workspaceFolder}"
@@ -21,19 +20,20 @@
             "type": "firefox",
             "request": "attach",
             "port": 6005,
-            "addonType": "webExtension",
             "addonPath": "${workspaceFolder}"
         },
         {
             "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
+            "url": "file://${workspaceFolder}/tests/pandora.com.html"
         },
         {
             "name": "Launch Opera",
             "type": "chrome",
             "request": "launch",
-            "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe"
+            "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe",
+            "url": "file://${workspaceFolder}/tests/pandora.com.html"
         }
     ]
 }

@@ -1,8 +1,8 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//div[@class='player-controls__play']";
-MediaKeys.pauseButton = "//div[@class='player-controls__play']";
-MediaKeys.skipButton = "//div[@class='slider__item slider__item_track'][4]//button";
+MediaKeys.playButton = 'div.player-controls__play';
+MediaKeys.pauseButton = 'div.player-controls__play';
+MediaKeys.skipButton = 'div.slider__item_track:nth-of-type(4) button';

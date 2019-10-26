@@ -4,7 +4,6 @@ import ContentScriptOptions from './ContentScriptOptions.js';
 import isFirefoxPromise from '../lib/isFirefoxPromise.js'
 
 let commandOptions = new CommandOptions();
-let userOptions = new UserOptions();
 let contentScriptOptions = new ContentScriptOptions();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,17 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
         else document.querySelector('div#commandsDiv').setAttribute('style', 'display: none;')
     });
 
-    userOptions.updatePage();
+    UserOptions.updatePage();
     contentScriptOptions.updatePage();
 });
 document.addEventListener('keydown', commandOptions.handleKeyDown);
+document.addEventListener('keyup', commandOptions.handleKeyUp);
+document.addEventListener('reset', commandOptions.handleReset);
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {
         case 'commands':
             commandOptions.save();
             break;
         case 'preferences':
-            userOptions.save();
+            UserOptions.save();
             break;
         case 'contentScripts':
             contentScriptOptions.save();

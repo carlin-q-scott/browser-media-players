@@ -26,11 +26,15 @@
             "single"
         ],
         "semi": [0],
+        "no-async-promise-executor": [0],
         "no-console": [1],
+        "no-misleading-character-class": [0],
+        "no-useless-catch": [0],
         "func-style": [
             "warn",
             "declaration",
             { "allowArrowFunctions": true }
-        ]
+        ],
+        "require-atomic-updates": [0]
     }
 }

@@ -1,9 +1,9 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//button[contains(@class,'paused')]";
-MediaKeys.pauseButton = "//button[contains(@class,'playing')]";
-MediaKeys.skipButton = "//a[contains(@class,'forward')]";
-MediaKeys.previousButton = "//a[contains(@class,'rewind')]";
+MediaKeys.playButton = 'button.paused';
+MediaKeys.pauseButton = 'button.playing';
+MediaKeys.skipButton = 'a.forward';
+MediaKeys.previousButton = 'a.rewind';

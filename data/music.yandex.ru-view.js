@@ -1,9 +1,9 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//div[@class='player-controls__btn player-controls__btn_play']";
-MediaKeys.pauseButton = "//div[@class='player-controls__btn player-controls__btn_play player-controls__btn_pause']";
-MediaKeys.skipButton = "//div[@class='player-controls__btn player-controls__btn_next']";
-MediaKeys.previousButton = "//div[@class='player-controls__btn player-controls__btn_prev']";
+MediaKeys.playButton = 'div.player-controls__btn_play';
+MediaKeys.pauseButton = 'div.player-controls__btn_pause';
+MediaKeys.skipButton = 'div.player-controls__btn_next';
+MediaKeys.previousButton = 'div.player-controls__btn_prev';

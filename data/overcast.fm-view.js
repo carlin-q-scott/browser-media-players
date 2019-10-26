@@ -1,9 +1,9 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//a[@id='playpausebutton']";
-MediaKeys.pauseButton = "//a[@id='playpausebutton']";
-MediaKeys.skipButton = "//a[@id='seekforwardbutton']";
-MediaKeys.previousButton = "//a[@id='seekbackbutton']";
+MediaKeys.playButton = 'a#playpausebutton';
+MediaKeys.pauseButton = 'a#playpausebutton';
+MediaKeys.skipButton = 'a#seekforwardbutton';
+MediaKeys.previousButton = 'a#seekbackbutton';

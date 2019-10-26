@@ -1,7 +1,7 @@
 /**
  * MediaKeys namespace.
  */
-if (typeof MediaKeys == "undefined") var MediaKeys = {};
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
 
-MediaKeys.playButton = "//div[@class='play_pause_button play_button']";
-MediaKeys.pauseButton = "//div[@class='play_pause_button pause_button']";
+MediaKeys.playButton = 'div.play_pause_button.play_button';
+MediaKeys.pauseButton = 'div.play_pause_button.pause_button';
