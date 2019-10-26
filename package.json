@@ -15,14 +15,15 @@
     "url": "https://github.com/carlin-q-scott/browser-media-players/issues"
   },
   "devDependencies": {
+    "acorn": "^7.1.0",
     "ajv": "^6.10.2",
     "eslint": "^6.5.1",
     "process-nextick-args": "^2.0.1",
     "web-ext": "^3.2.0",
-    "webextension-polyfill": "^0.5.0"
+    "webextension-polyfill": "^0.5.0",
+    "webextension-toolbox": "^3.0.0"
   },
   "scripts": {
-    "postinstall": "cpx 'node_modules/webextension-polyfill/dist/browser-polyfill.min.*' 'lib'",
     "lint": "web-ext lint",
     "firefox": "web-ext run --verbose --pref=javascript.options.strict=false",
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
@@ -50,9 +51,5 @@
     "build": {
       "overwriteDest": true
     }
-  },
-  "dependencies": {
-    "acorn": "^7.1.0",
-    "webextension-toolbox": "^3.0.0"
   }
 }
