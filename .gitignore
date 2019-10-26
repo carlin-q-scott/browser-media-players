@@ -1,10 +1,11 @@
 Thumbs.db
 *.xpi
-icon.png
-.idea/
-node_modules
+/icon.png
+/.idea/
+/node_modules
 *.log
 *.zip
-web-ext-artifacts/**
-icon425.png
-dist/
+/web-ext-artifacts/**
+/icon425.png
+/dist/
+/*.pem
