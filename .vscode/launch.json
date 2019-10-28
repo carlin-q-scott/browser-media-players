@@ -7,33 +7,44 @@
             "request": "launch",
             "reAttach": true,
             "reloadOnChange": {
-                "watch": "${workspaceFolder}/**/*.{js,json,html}",
-                "ignore": "**/node_modules/**"
+                "watch": "${workspaceFolder}/dist/firefox/**.{js,json,html}"
             },
             "reloadOnAttach": true,
-            "addonPath": "${workspaceFolder}",
-            "url": "file://${workspaceFolder}/tests/pandora.com.html",
-            "webRoot": "${workspaceFolder}"
+            "addonPath": "${workspaceFolder}\\dist\\firefox",
+            "preLaunchTask": "build firefox",
+            "skipFiles": [
+                "http?(s):/**"
+            ]
         },
         {
             "name": "Attach to Firefox",
             "type": "firefox",
             "request": "attach",
+            "reloadOnChange": {
+                "watch": "${workspaceFolder}/dist/firefox/**.{js,json,html}"
+            },
+            "reloadOnAttach": true,
             "port": 6005,
-            "addonPath": "${workspaceFolder}"
+            "addonPath": "${workspaceFolder}\\dist\\firefox",
+            "preLaunchTask": "build firefox",
+            "skipFiles": [
+                "http?(s):/**"
+            ]
         },
         {
             "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
-            "url": "file://${workspaceFolder}/tests/pandora.com.html"
+            "file": "${workspaceFolder}/tests/pandora.com.html",
+            "preLaunchTask": "build chrome"
         },
         {
             "name": "Launch Opera",
             "type": "chrome",
             "request": "launch",
             "runtimeExecutable": "${env:USERPROFILE}\\AppData\\Local\\Programs\\Opera\\launcher.exe",
-            "url": "file://${workspaceFolder}/tests/pandora.com.html"
+            "file": "${workspaceFolder}/tests/pandora.com.html",
+            "preLaunchTask": "build opera"
         }
     ]
 }

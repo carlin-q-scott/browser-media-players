@@ -5,12 +5,34 @@
     "tasks": [
         {
             "group": "build",
-            "label": "build",
+            "label": "dev firefox",
             "type": "npm",
-            "script": "build",
-            "problemMatcher": [
-                "$eslint-compact"
-            ]
+            "script": "dev firefox",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "group": "build",
+            "label": "dev chrome",
+            "type": "npm",
+            "script": "dev chrome",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "group": "build",
+            "label": "dev opera",
+            "type": "npm",
+            "script": "dev opera",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "group": "build",
+            "label": "build firefox",
+            "type": "npm",
+            "script": "build firefox",
+            "problemMatcher": []
         }
     ]
 }
