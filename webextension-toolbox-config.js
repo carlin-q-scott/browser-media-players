@@ -8,9 +8,8 @@ module.exports = {
     // eslint-disable-next-line no-unused-vars
     webpack: (config, { dev, vendor }) => {
     // Perform customizations to webpack config
-        config.module.rules.unshift({
+        config.module.rules.push({
             test: /\.(js)$/,
-            exclude: /node_modules/,
             use: 'eslint-loader'
         })
         // Important: return the modified config
