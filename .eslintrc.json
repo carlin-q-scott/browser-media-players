@@ -4,9 +4,6 @@
         "es6": true,
         "webextensions": true
     },
-    "globals": {
-        "browser": true
-    },
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module",
@@ -20,7 +17,7 @@
         ],
         "linebreak-style": [
             "warn",
-            "windows"
+            "unix"
         ],
         "quotes": [
             "warn",
