@@ -56,11 +56,20 @@
         "open_in_tab": false
     },
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ],
     "optional_permissions": [
         "*://*/"
     ],
+    "page_action": {
+        "default_icon": "icon64.png",
+        "default_title": "Enable media keys for this website",
+        "show_matches":
+        [
+            "file:///*/tests/pandora.com.html"
+        ]
+    },
     "content_scripts": [
         {
             "matches": [

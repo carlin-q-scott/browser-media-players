@@ -27,3 +27,15 @@ new ContentScriptOptions().activate();
 isFirefoxPromise.then(isFirefox => {
     if (isFirefox) new CommandOptions().activate();
 });
+
+browser.pageAction.onClicked(tab => {
+    // TODO: find match in contentScripts.json or storage (custom domains) to get correct matches pattern and scripts to load
+    browser.permissions.request({
+        origins: matches
+    }).then(approved => {
+        if (approved)
+            // TODO: register content scripts
+        else
+            alert('you need to approve Browser Media Player access to this site in order to enable media keys');
+    });
+})

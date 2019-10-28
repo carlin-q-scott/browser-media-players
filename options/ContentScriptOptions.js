@@ -80,15 +80,7 @@ class ContentScriptOptions extends Options {
         Object.keys(this.options).forEach(siteName => {
             let match = this.options[siteName];
             if (match.length > 0) {
-                let matches = [ match ];
-                browser.permissions.request({
-                    origins: matches
-                }).then(approved => {
-                    if (approved)
-                        browser.storage[this.storageLocation].set(this.forStorage());
-                    else
-                        alert('you need to approve access to the domain you specified');
-                });
+                browser.storage[this.storageLocation].set(this.forStorage());
             }
         });
     }
