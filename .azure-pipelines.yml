@@ -12,12 +12,14 @@ steps:
 
 - script: npm install
   displayName: 'npm install'
-- script: npm run build
-  displayName: 'npm run build'
+- script: npm run build firefox
+  displayName: 'npm run build firefox'
+- script: npm run build chrome
+  displayName: 'npm run build chrome'
 
 - task: PublishBuildArtifacts@1
   inputs:
     ArtifactName: Web-Extension
-    pathToPublish: '$(System.DefaultWorkingDirectory)/web-ext-artifacts'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/packages'
 
 name: 2.4.0$(Rev:.r)
