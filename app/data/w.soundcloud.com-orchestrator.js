@@ -4,6 +4,8 @@
  * Supports backwards compatibility with older Gecko key values.
  * See https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  */
+if (typeof MediaKeys == 'undefined') var MediaKeys = {};
+
 MediaKeys.Init = function () {
     let port = browser.runtime.connect(browser.runtime.id, {name: window.location.host});
 
