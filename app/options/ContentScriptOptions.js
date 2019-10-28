@@ -1,6 +1,6 @@
 import Options from './Options.js'
 
-const extensionBaseUrlRegex = /moz-extension:\/\/[\d\w\-]+/;
+const extensionBaseUrlRegex = /moz-extension:\/\/[\d\w-]+/;
 
 class Manifest {
     getContentScriptsFor(site) {
