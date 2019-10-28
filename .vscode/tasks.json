@@ -9,7 +9,9 @@
             "type": "npm",
             "script": "dev firefox",
             "isBackground": true,
-            "problemMatcher": []
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
         },
         {
             "group": "build",
@@ -17,7 +19,9 @@
             "type": "npm",
             "script": "dev chrome",
             "isBackground": true,
-            "problemMatcher": []
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
         },
         {
             "group": "build",
@@ -25,14 +29,18 @@
             "type": "npm",
             "script": "dev opera",
             "isBackground": true,
-            "problemMatcher": []
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
         },
         {
             "group": "build",
             "label": "build firefox",
             "type": "npm",
             "script": "build firefox",
-            "problemMatcher": []
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
         }
     ]
 }
