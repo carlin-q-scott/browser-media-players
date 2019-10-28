@@ -61,11 +61,11 @@ class ContentScriptOptions extends Options {
                 browser.tabs.query({
                     url: matches
                 })
-                .then(tabs => {
-                    tabs.forEach(tabInfo => {
-                        siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
+                    .then(tabs => {
+                        tabs.forEach(tabInfo => {
+                            siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
+                        })
                     })
-                })
             }
         });
     }

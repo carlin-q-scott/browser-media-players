@@ -1,8 +1,8 @@
 /**
  * Created by Carlin on 2/7/2016.
  */
-import hotkeyManager from "./hotkeyManager.js";
-import UserOptions from "../options/UserOptions.js";
+import hotkeyManager from './hotkeyManager.js';
+import UserOptions from '../options/UserOptions.js';
 
 /**
  * Keeps track of the page workers managed by this module
@@ -92,10 +92,10 @@ function AttachWorkerToPage(worker)
         worker.onMessage.addListener(message => {
             switch (message){
                 case 'Play':
-                    EmitEventToLastActivePageWorker("MediaPause", worker);
+                    EmitEventToLastActivePageWorker('MediaPause', worker);
                     break;
                 case 'Stop':
-                    EmitEventToLastActivePageWorker("MediaPlay", worker);
+                    EmitEventToLastActivePageWorker('MediaPlay', worker);
                     break;
             }
         });
