@@ -15,9 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     UserOptions.updatePage();
     contentScriptOptions.updatePage();
 });
-document.addEventListener('keydown', commandOptions.handleKeyDown);
-document.addEventListener('keyup', commandOptions.handleKeyUp);
-document.addEventListener('reset', commandOptions.handleReset);
+
+{
+    let commandsDiv = document.querySelector('#commandsDiv');
+    commandsDiv.addEventListener('keydown', commandOptions.handleKeyDown);
+    commandsDiv.addEventListener('keyup', commandOptions.handleKeyUp);
+    commandsDiv.addEventListener('reset', commandOptions.handleReset);
+}
+
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {
         case 'commands':
