@@ -19,7 +19,6 @@
             "name": "Attach to Firefox",
             "type": "firefox",
             "request": "attach",
-            "port": 6005,
             "addonPath": "${workspaceFolder}"
         },
         {
