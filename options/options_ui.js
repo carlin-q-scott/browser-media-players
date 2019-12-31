@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     contentScriptOptions.updatePage();
 });
 
-{
-    let commandsDiv = document.querySelector('#commandsDiv');
-    commandsDiv.addEventListener('keydown', commandOptions.handleKeyDown);
-    commandsDiv.addEventListener('keyup', commandOptions.handleKeyUp);
-    commandsDiv.addEventListener('reset', commandOptions.handleReset);
-}
+let commandsDiv = document.querySelector('#commandsDiv');
+commandsDiv.addEventListener('keydown', commandOptions.handleKeyDown);
+commandsDiv.addEventListener('keyup', commandOptions.handleKeyUp);
+commandsDiv.addEventListener('reset', commandOptions.handleReset);
+
+document.querySelector('#contentScripts').addEventListener('focusout', contentScriptOptions.handleBlur);
 
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {

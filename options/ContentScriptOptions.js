@@ -33,7 +33,21 @@ class ContentScriptOptions extends Options {
             'sync'
         );
     }
-    
+
+    static isValid(urlMatcher){
+        return /:\d+\//.test(urlMatcher) == false;
+    }
+
+    handleBlur(event) {
+        if (ContentScriptOptions.isValid(event.srcElement.value)) {
+            event.srcElement.classList.remove('error');
+            event.srcElement.title = '';
+        } else {
+            event.srcElement.classList.add('error');
+            event.srcElement.title = 'Do not include the port number in your url matcher, such as ":32400"';
+        }
+    }
+
     /** @description activates custom site matches
      *  @param {object} options for custom sites
      */
