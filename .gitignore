@@ -5,6 +5,5 @@ icon.png
 node_modules
 *.log
 *.zip
-lib/browser-polyfill.min.*
 web-ext-artifacts/**
 icon425.png

@@ -47,7 +47,7 @@ class ContentScriptOptions extends Options {
                 let matches = [ match ];
                 let siteManifest = manifest[siteName];
 
-                if (window.matchMedia('screen and (-webkit-min-device-pixel-ratio:0)').matches) {   // Chrome or Opera
+                if (!browser.contentScripts.register) {   // Chrome or Opera
                     browser.tabs.onUpdated.addListener(tabInfo => {
                         if (new RegExp(match).test(tabInfo.url)) {
                             siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
