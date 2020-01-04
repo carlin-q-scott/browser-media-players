@@ -34,17 +34,19 @@ class ContentScriptOptions extends Options {
         );
     }
 
-    static isValid(urlMatcher){
-        return /:\d+\//.test(urlMatcher) == false;
+    static validate(urlMatcher){
+        if (/:\d+\//.test(urlMatcher)) return 'Do not include the port number in your url';
     }
 
-    handleBlur(event) {
-        if (ContentScriptOptions.isValid(event.srcElement.value)) {
-            event.srcElement.classList.remove('error');
-            event.srcElement.title = '';
-        } else {
+    handleValidation(event) {
+        let validationFailureMessage = ContentScriptOptions.validate(event.srcElement.value);
+        if (validationFailureMessage) {
             event.srcElement.classList.add('error');
             event.srcElement.title = 'Do not include the port number in your url matcher, such as ":32400"';
+        }
+        else {
+            event.srcElement.classList.remove('error');
+            event.srcElement.title = '';
         }
     }
 
@@ -81,20 +83,27 @@ class ContentScriptOptions extends Options {
 
     save() {
         this.updateFromPage();
-        
-        Object.keys(this.options).forEach(siteName => {
-            let match = this.options[siteName];
-            if (match.length > 0) {
-                let matches = [ match ];
-                browser.permissions.request({
-                    origins: matches
-                }).then(approved => {
-                    if (approved)
-                        browser.storage[this.storageLocation].set(this.forStorage());
-                    else
-                        alert('you need to approve access to the domain you specified');
-                });
-            }
+
+        Promise.all(
+            Object.keys(this.options).map(siteName => {
+                let match = this.options[siteName];
+                if (match.length > 0) return browser.permissions.request({ origins: [ match ] })
+                    .then(permitted => {
+                        let siteElement = document.getElementById(siteName);
+                        if (permitted){
+                            siteElement.classList.remove('error');
+                            siteElement.title = '';
+                        }
+                        else{
+                            siteElement.classList.add('error');
+                            siteElement.title = 'You must permit access to the site.'
+                        }
+                        return permitted;
+                    });
+            })
+        ).then(permissionRequests => {
+            if (permissionRequests.every(b => b))
+                browser.storage[this.storageLocation].set(this.forStorage());
         });
     }
 }

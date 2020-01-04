@@ -21,7 +21,7 @@ commandsDiv.addEventListener('keydown', commandOptions.handleKeyDown);
 commandsDiv.addEventListener('keyup', commandOptions.handleKeyUp);
 commandsDiv.addEventListener('reset', commandOptions.handleReset);
 
-document.querySelector('#contentScripts').addEventListener('focusout', contentScriptOptions.handleBlur);
+document.querySelector('#contentScripts').addEventListener('focusout', contentScriptOptions.handleValidation);
 
 document.addEventListener('submit', event => {
     switch (event.srcElement.id) {
