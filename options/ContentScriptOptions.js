@@ -1,4 +1,4 @@
-import Options from './Options.js'
+import Options from './Options.js';
 
 const extensionBaseUrlRegex = /moz-extension:\/\/[\d\w-]+/;
 
@@ -61,25 +61,16 @@ class ContentScriptOptions extends Options {
                 let matches = [ match ];
                 let siteManifest = manifest[siteName];
 
-                if (!browser.contentScripts.register) {   // Chrome or Opera
+                if (!browser.contentScripts) {   // Opera
                     browser.tabs.onUpdated.addListener(tabInfo => {
                         if (new RegExp(match).test(tabInfo.url)) {
                             siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
                         }
                     });
                 }
-                else { // firefox
+                else {
                     browser.contentScripts.register({ matches, js: siteManifest });
                 }
-
-                browser.tabs.query({
-                    url: matches
-                })
-                    .then(tabs => {
-                        tabs.forEach(tabInfo => {
-                            siteManifest.forEach(details => browser.tabs.executeScript(tabInfo.id, details));
-                        })
-                    })
             }
         });
     }
