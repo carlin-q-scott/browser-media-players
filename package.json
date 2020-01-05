@@ -16,10 +16,10 @@
   },
   "devDependencies": {
     "ajv": "^6.10.2",
-    "eslint": "^6.5.1",
+    "eslint": "^6.8.0",
     "process-nextick-args": "^2.0.1",
-    "web-ext": "^3.2.0",
-    "webextension-polyfill": "^0.5.0"
+    "web-ext": "^4.0.0",
+    "webextension-polyfill": "^0.6.0"
   },
   "scripts": {
     "lint": "web-ext lint",
