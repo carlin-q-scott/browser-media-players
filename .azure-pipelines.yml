@@ -30,4 +30,4 @@ steps:
     ArtifactName: Web-Extension
     pathToPublish: '$(System.DefaultWorkingDirectory)/web-ext-artifacts'
 
-name: 2.4.$(Rev:.r)
+name: 2.5.$(Rev:r)
