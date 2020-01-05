@@ -100,6 +100,7 @@ class ContentScriptOptions extends Options {
                         }
                         return permitted;
                     });
+                else return Promise.resolve(true);
             })
         ).then(permissionRequests => {
             if (permissionRequests.every(b => b))
