@@ -1,4 +1,5 @@
 [![Build Status](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_apis/build/status/browser-media-players)](https://dev.azure.com/BrowserMediaKeys/BrowserMediaPlayers/_build/latest?definitionId=1)
+![Deployment Status](https://vsrm.dev.azure.com/BrowserMediaKeys/_apis/public/Release/badge/8535eb4a-d24c-4680-acbf-d8211c2af7a4/1/1)
 
 
 Description
