@@ -348,7 +348,8 @@
             "matches": [
                 "*://*.music.amazon.com/*",
                 "*://*.music.amazon.de/*",
-                "*://*.music.amazon.co.uk/*"
+                "*://*.music.amazon.co.uk/*",
+                "*://*.music.amazon.com.au/*"
             ]
         },
         {
