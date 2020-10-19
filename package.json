@@ -18,12 +18,13 @@
     "ajv": "^6.10.2",
     "eslint": "^6.8.0",
     "process-nextick-args": "^2.0.1",
-    "web-ext": "^4.0.0",
+    "web-ext": "^5.2.0",
     "webextension-polyfill": "^0.6.0"
   },
   "scripts": {
     "lint": "web-ext lint",
     "firefox": "web-ext run --verbose --pref=javascript.options.strict=false",
+    "firefox-developer": "web-ext run --firefox=firefoxdeveloperedition --verbose --pref=javascript.options.strict=false",
     "pandora": "web-ext run --url https://www.pandora.com/station/play/3576905106862450009 --browser-console",
     "youtube": "web-ext run --url https://www.youtube.com/watch?v=hKitZEncwro --pref=javascript.options.strict=false --browser-console",
     "spotify": "web-ext run --url https://open.spotify.com --browser-console",
