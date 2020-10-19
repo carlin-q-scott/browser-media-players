@@ -61,8 +61,7 @@
     "optional_permissions": [
         "*://*/"
     ],
-    "content_scripts": [
-        {
+    "content_scripts": [{
             "matches": [
                 "*://*.youtube.com/*"
                 //,"file:///*/tests/youtube.com.html"
@@ -421,6 +420,17 @@
         {
             "js": [
                 "lib/browser-polyfill.min.js",
+                "data/siriusxm-view.js",
+                "data/finder.js",
+                "data/orchestrator.js"
+            ],
+            "matches": [
+                "*://*.siriusxm.com/*"
+            ]
+        },
+        {
+            "js": [
+                "lib/browser-polyfill.min.js",
                 "data/tunein.com-view.js",
                 "data/finder.js",
                 "data/orchestrator.js"
@@ -459,7 +469,7 @@
                 "data/orchestrator.js"
             ],
             "matches": [
-              "*://*.udemy.com/*"
+                "*://*.udemy.com/*"
             ]
         }
     ],
