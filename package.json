@@ -15,7 +15,7 @@
     "url": "https://github.com/carlin-q-scott/browser-media-players/issues"
   },
   "devDependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "eslint": "^6.8.0",
     "process-nextick-args": "^2.0.1",
     "web-ext": "^4.0.0",
